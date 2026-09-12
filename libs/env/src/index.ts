@@ -29,6 +29,7 @@ export const getEnv = () => {
         accessKeyID: process.env.HIBISCUS_AWS_ACCESS_KEY_ID,
         secretAccessKey: process.env.HIBISCUS_AWS_SECRET_ACCESS_KEY,
         region: process.env.HIBISCUS_AWS_REGION,
+        endpoint: process.env.HIBISCUS_AWS_DYNAMODB_ENDPOINT,
       },
       Cookies: {
         accessTokenName: process.env.NEXT_PUBLIC_HIBISCUS_ACCESS_COOKIE_NAME,

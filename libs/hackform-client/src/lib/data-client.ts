@@ -7,7 +7,7 @@ import {
 import { injectable } from 'tsyringe';
 import { v4 } from 'uuid';
 import { marshall, unmarshall } from '@aws-sdk/util-dynamodb';
-import { credentials, region } from './aws';
+import { credentials, region, endpoint } from './aws';
 import { getEnv } from '@nextnexus/env';
 
 @injectable()
@@ -20,6 +20,7 @@ export class HackformSubmissionDataClient {
     this.ddb = new DynamoDBClient({
       region,
       credentials,
+      endpoint,
     });
     // other variables will be set in environment
   }
