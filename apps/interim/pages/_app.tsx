@@ -24,7 +24,7 @@ function CustomApp({ Component, pageProps, envs }: CustomAppProps) {
         <Toaster />
         <>
           <Head>
-            <title>Next Nexus | Join us next year!</title>
+            <title>NextNexus | Join us next year!</title>
             <link rel="shortcut icon" href="/img/favicon.ico" />
           </Head>
           <main className="app">

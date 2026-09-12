@@ -61,7 +61,7 @@ export function Index() {
           </H3>
           <H3>
             If your application status remains the same after several minutes,
-            feel free to contact Next Nexus support at{' '}
+            feel free to contact NextNexus support at{' '}
             <a href="mailto:team@nextnexus.com">team@nextnexus.com</a> for further
             assistance.
           </H3>

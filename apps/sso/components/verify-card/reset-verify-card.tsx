@@ -52,7 +52,7 @@ export function ResetVerifyCard() {
     <StyledVerifyCard>
       <Image
         src="/static/images/logo-2023.svg"
-        alt="Next Nexus Logo"
+        alt="NextNexus Logo"
         width={100}
         height={100}
       />

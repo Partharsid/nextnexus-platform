@@ -7,7 +7,7 @@ const MobileNavbar: FC = () => {
   return (
     <MobileNavbarContainer>
       <LogoContainer>
-        <img src="./img/logos/logo.svg" alt="Next Nexus 2023 Logo" />
+        <img src="./img/logos/logo.svg" alt="NextNexus 2023 Logo" />
       </LogoContainer>
       <TheBurger />
     </MobileNavbarContainer>
@@ -39,7 +39,7 @@ const TheBurger = () => {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <DropdownLink>Next Nexus 2022</DropdownLink>
+                  <DropdownLink>NextNexus 2022</DropdownLink>
                 </a>
               </DropdownContentItem>
               <DropdownContentItem>
@@ -48,7 +48,7 @@ const TheBurger = () => {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <DropdownLink>Next Nexus 2021</DropdownLink>
+                  <DropdownLink>NextNexus 2021</DropdownLink>
                 </a>
               </DropdownContentItem>
               <DropdownContentItem>
@@ -57,7 +57,7 @@ const TheBurger = () => {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <DropdownLink>Next Nexus 2020</DropdownLink>
+                  <DropdownLink>NextNexus 2020</DropdownLink>
                 </a>
               </DropdownContentItem>
             </DropdownContent>

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { SVGProps } from 'react';
-const Next NexusGuyDrawing = (props: SVGProps<SVGSVGElement>) => (
+const NextNexusGuyDrawing = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 509 419"
@@ -200,4 +200,4 @@ const Next NexusGuyDrawing = (props: SVGProps<SVGSVGElement>) => (
     />
   </svg>
 );
-export default Next NexusGuyDrawing;
+export default NextNexusGuyDrawing;

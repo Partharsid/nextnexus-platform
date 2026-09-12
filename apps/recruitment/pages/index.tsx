@@ -5,7 +5,7 @@ import StudentXP from '../components/studentxp/studentxp';
 import Footer from '../components/footer/footer';
 import Navbar from '../components/navbar/navbar';
 import AlumDestinations from '../components/alum-destinations/alum-destinations';
-import Next NexusMemories from '../components/nextnexus-memories/nextnexus-memories';
+import NextNexusMemories from '../components/nextnexus-memories/nextnexus-memories';
 
 export function Index() {
   return (
@@ -25,9 +25,9 @@ export function Index() {
       <AlumDestSection>
         <AlumDestinations />
       </AlumDestSection>
-      <Next NexusMemoriesSection>
-        <Next NexusMemories />
-      </Next NexusMemoriesSection>
+      <NextNexusMemoriesSection>
+        <NextNexusMemories />
+      </NextNexusMemoriesSection>
       <FooterContainer>
         <Footer />
       </FooterContainer>
@@ -98,7 +98,7 @@ const AlumDestSection = styled.section`
   padding-top: 10rem;
 `;
 
-const Next NexusMemoriesSection = styled.section`
+const NextNexusMemoriesSection = styled.section`
   margin: auto;
 `;
 

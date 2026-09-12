@@ -12,11 +12,11 @@ function AppsClosedPlaceholder() {
         priority
         alt="Postcard plane"
       />
-      <H2>Apps for Next Nexus X has closed!</H2>
+      <H2>Apps for NextNexus X has closed!</H2>
       <H3>
-        We have closed our apps for Next Nexus X, and will send emails to people who
+        We have closed our apps for NextNexus X, and will send emails to people who
         have applied soon! If you missed this event{"'"}s apps, we still have
-        many more cool upcoming events. Make sure to stay up to date with Next Nexus
+        many more cool upcoming events. Make sure to stay up to date with NextNexus
         through our{' '}
         <Link href="https://instagram.com/nextnexusofficial/" passHref underline>
           social media

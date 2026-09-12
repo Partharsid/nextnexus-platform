@@ -86,7 +86,7 @@ export function Index({ appsOpen, waitlistOpen }: ServerSideProps) {
     return (
       <Container>
         <CenterContainer>
-          <H3>Apps for Next Nexus X have closed!</H3>
+          <H3>Apps for NextNexus X have closed!</H3>
           <Link
             href={'/'}
             passHref

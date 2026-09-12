@@ -24,7 +24,7 @@ export function Topic(props: TopicProps) {
         </Heading>
         <Text>
           As the world begins to recover from a global pandemic, we&apos;ve
-          discovered how interconnected our planet has become. Next Nexus&apos;s
+          discovered how interconnected our planet has become. NextNexus&apos;s
           theme for 2023 asks participants to consider our global communities,
           be it the{' '}
           <ColorSpanBold color={Colors2023.YELLOW.STANDARD}>

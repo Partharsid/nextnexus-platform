@@ -14,7 +14,7 @@ import {
 
 export const formMetadata2023HackerApps: HackformMetadata = {
   entry: {
-    title: 'Next Nexus 2023 Application',
+    title: 'NextNexus 2023 Application',
     subtitle:
       "We're so glad to have you join us for SoCal's favorite hackathon",
     estTimeInMinutes: 5,
@@ -206,7 +206,7 @@ export const formMetadata2023HackerApps: HackformMetadata = {
       subtitle: (
         <span>
           Individuals with disabilities who need accommodations to attend this
-          event may contact Next Nexus’s event team at team@nextnexus.com. For more
+          event may contact NextNexus’s event team at team@nextnexus.com. For more
           information regarding accommodations, please visit{' '}
           <Link href="https://hack.sc/accessibility" passHref underline>
             hack.sc/accessibility
@@ -280,7 +280,7 @@ export const formMetadata2023HackerApps: HackformMetadata = {
       },
     },
     {
-      title: 'Have you attended Next Nexus before?',
+      title: 'Have you attended NextNexus before?',
       type: HackformQuestionType.SingleChoice,
       required: true,
       options: [
@@ -384,7 +384,7 @@ export const formMetadata2023HackerApps: HackformMetadata = {
       options: getStartDateJobOptions(),
     },
     {
-      title: 'How did you hear about Next Nexus?',
+      title: 'How did you hear about NextNexus?',
       type: HackformQuestionType.SingleChoice,
       hasOtherField: true,
       otherFieldLabel: 'Other social media',
@@ -405,12 +405,12 @@ export const formMetadata2023HackerApps: HackformMetadata = {
       title: (
         <span>
           I have read and agree to the{' '}
-          <Link href={hackformLinks.Next Nexus.CodeOfConduct} passHref underline>
-            Next Nexus Code of Conduct
+          <Link href={hackformLinks.NextNexus.CodeOfConduct} passHref underline>
+            NextNexus Code of Conduct
           </Link>{' '}
           and{' '}
-          <Link href={hackformLinks.Next Nexus.TermsOfService} passHref underline>
-            Next Nexus Terms and Conditions
+          <Link href={hackformLinks.NextNexus.TermsOfService} passHref underline>
+            NextNexus Terms and Conditions
           </Link>
           .
         </span>
@@ -474,6 +474,6 @@ export const formMetadata2023HackerApps: HackformMetadata = {
   end: {
     title: 'Press below to submit your application!',
     subtitle:
-      'Thank you for filling the form out. Once you press the button below, your application will be submitted to us for review. Thank you for applying to Next Nexus and we look forward to seeing you in February!',
+      'Thank you for filling the form out. Once you press the button below, your application will be submitted to us for review. Thank you for applying to NextNexus and we look forward to seeing you in February!',
   },
 };

@@ -18,10 +18,10 @@ export function StudentXP(props: StudentXPProps) {
             </Photo>
             <Testimonial>
               <StyledText>
-                My favorite memory of Next Nexus was working with my amazing team to
+                My favorite memory of NextNexus was working with my amazing team to
                 put together a covid safe hackathon against all odds! I am super
                 proud of the team for their hard work and loved learning and
-                becoming closer with Next Nexus my senior year.
+                becoming closer with NextNexus my senior year.
               </StyledText>
               <Name>Katherine Wong</Name>
               <Title>President &apos;21</Title>
@@ -33,7 +33,7 @@ export function StudentXP(props: StudentXPProps) {
             </Photo>
             <Testimonial>
               <StyledText>
-                My favorite things about Next Nexus were spending time with some of
+                My favorite things about NextNexus were spending time with some of
                 my best friends and getting to see all of our hard work pay off.
                 My favorite memory was getting to know everyone at the retreat!
               </StyledText>
@@ -47,7 +47,7 @@ export function StudentXP(props: StudentXPProps) {
             </Photo>
             <Testimonial>
               <StyledText>
-                My favorite thing about Next Nexus is students putting on an event
+                My favorite thing about NextNexus is students putting on an event
                 that most professional organizations would struggle to do.
               </StyledText>
               <Name>Max Leiter</Name>
@@ -61,7 +61,7 @@ export function StudentXP(props: StudentXPProps) {
             <Testimonial>
               <StyledText>
                 My favorite memory was the night of the final interview where we
-                welcomed all of the new members to Next Nexus! It was so rewarding
+                welcomed all of the new members to NextNexus! It was so rewarding
                 to watch the organization grow so much and meet the amazing new
                 organizers.
               </StyledText>

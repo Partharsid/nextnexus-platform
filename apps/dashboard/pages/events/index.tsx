@@ -205,11 +205,11 @@ function EventPage() {
               <HeadingContainer>
                 <Image
                   src={nextnexusIcon}
-                  alt="Next Nexus Logo"
+                  alt="NextNexus Logo"
                   width={40}
                   height={40}
                 />
-                <StyledH1> Next Nexus</StyledH1>
+                <StyledH1> NextNexus</StyledH1>
               </HeadingContainer>
             </MobileTopNav>
             <MobilePage>

@@ -5,15 +5,15 @@ import { GlowSpan } from '@nextnexus/ui-kit-2023';
 import { NextNexusRole } from '@nextnexus/types';
 import { Colors2023 } from '@nextnexus/styles';
 import { logout } from '@nextnexus/sso-client';
-import Next NexusLogo from '../svg/nextnexus-logo';
-import Next NexusLogoNoWords from '../svg/nextnexus-logo-nowords';
+import NextNexusLogo from '../svg/nextnexus-logo';
+import NextNexusLogoNoWords from '../svg/nextnexus-logo-nowords';
 
 export function BottomBar() {
   return (
     <StyledBottomBar>
-      <Next NexusLogoNoWords />
+      <NextNexusLogoNoWords />
       <UserText>
-        Powered by <span style={{ fontWeight: 700 }}>Next Nexus</span>
+        Powered by <span style={{ fontWeight: 700 }}>NextNexus</span>
       </UserText>
     </StyledBottomBar>
   );

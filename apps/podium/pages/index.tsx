@@ -337,7 +337,7 @@ const Index = () => {
       {isDragging && <OnHoldDroppable type={'OnHoldAdd'} />}
 
       <header className={`${styles.header} ${styles.flexCenter}`}>
-        <img src="logo_word.png" alt="NextNexus Next Nexus Logo" />
+        <img src="logo_word.png" alt="NextNexus NextNexus Logo" />
         {/* <BiSearch
           color="#FFFFFF"
           size="30px"

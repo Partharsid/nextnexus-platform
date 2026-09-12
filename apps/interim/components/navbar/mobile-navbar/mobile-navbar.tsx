@@ -6,7 +6,7 @@ import ham from './mobile-navbar.module.css';
 const MobileNavbar: FC = () => {
   return (
     <MobileNavbarContainer>
-      <StyledText>Next Nexus</StyledText>
+      <StyledText>NextNexus</StyledText>
       <TheBurger />
     </MobileNavbarContainer>
   );
@@ -37,7 +37,7 @@ const TheBurger = () => {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <DropdownLink>Next Nexus 2023</DropdownLink>
+                  <DropdownLink>NextNexus 2023</DropdownLink>
                 </a>
               </DropdownContentItem>
               <DropdownContentItem>
@@ -46,7 +46,7 @@ const TheBurger = () => {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <DropdownLink>Next Nexus 2022</DropdownLink>
+                  <DropdownLink>NextNexus 2022</DropdownLink>
                 </a>
               </DropdownContentItem>
               <DropdownContentItem>
@@ -55,7 +55,7 @@ const TheBurger = () => {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <DropdownLink>Next Nexus 2021</DropdownLink>
+                  <DropdownLink>NextNexus 2021</DropdownLink>
                 </a>
               </DropdownContentItem>
               <DropdownContentItem>
@@ -64,7 +64,7 @@ const TheBurger = () => {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <DropdownLink>Next Nexus 2020</DropdownLink>
+                  <DropdownLink>NextNexus 2020</DropdownLink>
                 </a>
               </DropdownContentItem>
             </DropdownContent>

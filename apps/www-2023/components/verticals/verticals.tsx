@@ -46,7 +46,7 @@ export function Verticals(props: VerticalsProps) {
       verticalName: 'Beyond the Globe',
       verticalSlogan: 'Shoot for the Stars!',
       verticalDesc:
-        'At Next Nexus, the sky is not the limit. Projects in this vertical should look beyond our planet and into the cosmos, contributing to space exploration.',
+        'At NextNexus, the sky is not the limit. Projects in this vertical should look beyond our planet and into the cosmos, contributing to space exploration.',
       verticalQuestion: 'What is your moonshot?',
     },
   ];

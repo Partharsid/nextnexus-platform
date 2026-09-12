@@ -11,14 +11,14 @@ export function Newsletter(props: NewsletterProps) {
     <StyledNewsletter>
       <StyledContent>
         <GlowSpan shadowColor={Colors2023.RED.STANDARD}>
-          <H1>Welcome to Next Nexus</H1>
+          <H1>Welcome to NextNexus</H1>
         </GlowSpan>
         <GlowSpan shadowColor={Colors2023.YELLOW.STANDARD}>
           <Label>socal&apos;s flagship hackathon</Label>
         </GlowSpan>
         <Text>
           Located in the heart of sunny Los Angeles, based at the University of
-          Southern California, Next Nexus brings hundreds of hackers, designers, and
+          Southern California, NextNexus brings hundreds of hackers, designers, and
           visionaries from all across the world together for a weekend of{' '}
           <ColorSpan color={Colors2023.BLUE.STANDARD}>innovation</ColorSpan>,{' '}
           <ColorSpan color={Colors2023.YELLOW.STANDARD}>connection</ColorSpan>,

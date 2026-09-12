@@ -36,7 +36,7 @@ export function Teams(props: TeamsProps) {
       backTitleElement: (
         <>
           <GradientSpan>
-            Design team lies at the heart of what makes Next Nexus pop
+            Design team lies at the heart of what makes NextNexus pop
           </GradientSpan>
           ✨<GradientSpan>.</GradientSpan>
         </>
@@ -72,13 +72,13 @@ export function Teams(props: TeamsProps) {
       backTitleElement: (
         <>
           <GradientSpan>
-            Sponsorship is all about raising the funds that make Next Nexus possible
+            Sponsorship is all about raising the funds that make NextNexus possible
           </GradientSpan>
           💸<GradientSpan>.</GradientSpan>
         </>
       ),
       teamDescriptionElement: `
-        The Next Nexus Sponsorship provides funding for our hackathon, reaching out to 
+        The NextNexus Sponsorship provides funding for our hackathon, reaching out to 
         potential sponsors, networking 💼 with professionals in the tech 
         space, and put together the best experience for our sponsors. If you’re 
         interested in exploring the tech sector more and enjoy talking to people, 
@@ -91,13 +91,13 @@ export function Teams(props: TeamsProps) {
       backTitleElement: (
         <>
           <GradientSpan>
-            Marketing wants to share with the world what Next Nexus is all about
+            Marketing wants to share with the world what NextNexus is all about
           </GradientSpan>
           📢<GradientSpan>!</GradientSpan>
         </>
       ),
       teamDescriptionElement: `
-        The Marketing Team is at the core of Next Nexus, working with other teams on 
+        The Marketing Team is at the core of NextNexus, working with other teams on 
         social media creation & management, digital marketing, aesthetics, writing, 
         photography 📸, and even executing creative campaigns for 
         an amazing hackathon! If you have a diverse outreach skill set, this is the 
@@ -119,7 +119,7 @@ export function Teams(props: TeamsProps) {
         The Operations Team is responsible for the day-of logistics of the event. We 
         coordinate venues, budget, and other operations. If you’re interested in 
         learning more about operations management 📋 or the business side of events - 
-        then our team is for you. Join us and become a part of why Next Nexus runs without 
+        then our team is for you. Join us and become a part of why NextNexus runs without 
         a hitch!
       `,
     },

@@ -6,7 +6,7 @@ export default function ImageSection() {
     <div style={{ zIndex: -1 }}>
       <DesktopImage>
         <Image
-          alt="Next Nexus Logo Background"
+          alt="NextNexus Logo Background"
           src="/img/light-desktop-bg.svg"
           fill
           quality={100}
@@ -14,7 +14,7 @@ export default function ImageSection() {
       </DesktopImage>
       <MobileImage>
         {/* <Image
-        alt="Next Nexus Logo Background"
+        alt="NextNexus Logo Background"
         src="/img/light-mobile-bg.svg"
         layout="fixed"
         objectFit="fill"

@@ -95,7 +95,7 @@ const faqQuestionsAndAnswersData: {
   {
     titleText: 'What if I don’t know how to code?',
     disclosedText:
-      'Don’t worry! Next Nexus offers plenty of beginner friendly workshops to get you started and help you lift your projects off the ground. ',
+      'Don’t worry! NextNexus offers plenty of beginner friendly workshops to get you started and help you lift your projects off the ground. ',
   },
 ];
 
@@ -106,7 +106,7 @@ const faqQuestionsAndAnswersData2: {
   {
     titleText: 'What will I need?',
     disclosedText:
-      'A computer and a passion for Next Nexus’s mission of connecting the world!',
+      'A computer and a passion for NextNexus’s mission of connecting the world!',
   },
   {
     titleText: 'Who can attend?',

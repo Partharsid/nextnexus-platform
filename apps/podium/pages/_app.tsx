@@ -8,7 +8,7 @@ function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>Next Nexus Podium</title>
+        <title>NextNexus Podium</title>
       </Head>
       <SupabaseContextProvider>
         <NextNexusUserProvider>

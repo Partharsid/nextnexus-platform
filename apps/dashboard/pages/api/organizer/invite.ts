@@ -33,7 +33,7 @@ export default async function invite( //anyone in a team can invite
     }
     if (invitedUser.data === null) {
       throw new Error(
-        "There's no user under this email! Please make sure whoever you invited have registered an account on Next Nexus"
+        "There's no user under this email! Please make sure whoever you invited have registered an account on NextNexus"
       );
     }
     const invitedId = invitedUser.data.user_id;
@@ -45,7 +45,7 @@ export default async function invite( //anyone in a team can invite
         Please invite someone else but yourself or get some friends :) 
         -- 
         Sincerely, 
-        Next Nexus Engineering
+        NextNexus Engineering
       `
       );
     }

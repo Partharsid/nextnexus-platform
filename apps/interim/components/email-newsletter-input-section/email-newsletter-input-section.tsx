@@ -49,7 +49,7 @@ export function EmailNewsletterInputSection(
     onSubmit: (values) => {
       toast.promise(saveContactToSendgridMutation.mutateAsync(values.email), {
         loading: 'Subscribing you to our newsletter...',
-        success: "You have subscribed to Next Nexus's newsletter. Stay tuned!",
+        success: "You have subscribed to NextNexus's newsletter. Stay tuned!",
         error: (e) => e.toString(),
       });
     },

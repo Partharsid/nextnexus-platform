@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { SVGProps } from 'react';
-const Next NexusLogo = (props: SVGProps<SVGSVGElement>) => (
+const NextNexusLogo = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={230}
@@ -68,4 +68,4 @@ const Next NexusLogo = (props: SVGProps<SVGSVGElement>) => (
     </defs>
   </svg>
 );
-export default Next NexusLogo;
+export default NextNexusLogo;

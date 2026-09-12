@@ -12,7 +12,7 @@ export function ThankYouText({ nextYear }: ThankYouTextProps) {
     <Container>
       <ThankYouTextH3>
         Thank you so much for joining us this year at{' '}
-        <GradientSpan>Next Nexus {lastYear}!</GradientSpan> We hope you&apos;ll join
+        <GradientSpan>NextNexus {lastYear}!</GradientSpan> We hope you&apos;ll join
         us for our next event, which may come sooner that you think!
       </ThankYouTextH3>
     </Container>

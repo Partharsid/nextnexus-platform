@@ -28,7 +28,7 @@ function BattlepassDescription() {
           </Text>
           <br />
           <Text>
-            Battlepass is Next Nexus{"'"}s rewards and points system for you, our{' '}
+            Battlepass is NextNexus{"'"}s rewards and points system for you, our{' '}
             <GlowSpan
               color={Colors2023.BLUE.STANDARD}
               shadowColor={Colors2023.BLUE.DARK}
@@ -57,7 +57,7 @@ function BattlepassDescription() {
           </Text>
           <br />
           <Text style={{ fontStyle: 'italic' }}>Best,</Text>
-          <Text style={{ fontStyle: 'italic' }}>The Next Nexus Team</Text>
+          <Text style={{ fontStyle: 'italic' }}>The NextNexus Team</Text>
         </GrayBox>
       </Modal>
       <H1>

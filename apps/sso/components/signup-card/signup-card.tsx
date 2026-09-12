@@ -18,8 +18,8 @@ import { useNextNexusSupabase } from '@nextnexus/nextnexus-supabase-context';
 import { Input } from '../auth-components/styled-input';
 import { StyledAuthCard } from '../auth-components/styled-card';
 import { BackgroundShapes } from '../colored-shapes/background-shapes';
-import Next NexusGuyDrawing from '../svg/nextnexus-guy-drawing';
-import Next NexusLogo from '../svg/nextnexus-logo';
+import NextNexusGuyDrawing from '../svg/nextnexus-guy-drawing';
+import NextNexusLogo from '../svg/nextnexus-logo';
 import Link from 'next/link';
 
 /* eslint-disable-next-line */
@@ -84,9 +84,9 @@ export function SignUpCard(props: SignUpProps) {
       {/* Add Styled Shapes for page */}
       <BackgroundShapes></BackgroundShapes>
       <StyledAuthCard>
-        <Next NexusGuyDrawing />
+        <NextNexusGuyDrawing />
         <HeadingContainer>
-          <Next NexusLogo />
+          <NextNexusLogo />
           <h2 className="m-0 mb-[10px] text-lg">Create an Account</h2>
         </HeadingContainer>
         <StyledForm onSubmit={handleSubmit}>
@@ -166,7 +166,7 @@ const StyledErrorText = styled(Text)`
   color: red;
 `;
 
-const Next NexusTag = styled.div`
+const NextNexusTag = styled.div`
   min-width: 7%;
   min-height: 7%;
   background: #429fee;

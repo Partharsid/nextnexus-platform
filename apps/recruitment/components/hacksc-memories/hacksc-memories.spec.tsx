@@ -1,10 +1,10 @@
 import { render } from '@testing-library/react';
 
-import Next NexusMemories from './nextnexus-memories';
+import NextNexusMemories from './nextnexus-memories';
 
-describe('Next NexusMemories', () => {
+describe('NextNexusMemories', () => {
   it('should render successfully', () => {
-    const { baseElement } = render(<Next NexusMemories />);
+    const { baseElement } = render(<NextNexusMemories />);
     expect(baseElement).toBeTruthy();
   });
 });

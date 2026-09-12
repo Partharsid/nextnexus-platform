@@ -3,12 +3,12 @@ import styled from 'styled-components';
 import { H2 } from '@nextnexus/ui';
 
 /* eslint-disable-next-line */
-export interface Next NexusMemoriesProps {}
+export interface NextNexusMemoriesProps {}
 
-export function Next NexusMemories(props: Next NexusMemoriesProps) {
+export function NextNexusMemories(props: NextNexusMemoriesProps) {
   return (
-    <StyledNext NexusMemories>
-      <MemosHeaderH2>Next Nexus Memories</MemosHeaderH2>
+    <StyledNextNexusMemories>
+      <MemosHeaderH2>NextNexus Memories</MemosHeaderH2>
       <MemoriesContainer>
         <Memory>
           <img
@@ -64,7 +64,7 @@ export function Next NexusMemories(props: Next NexusMemoriesProps) {
           <img src="/img/memories/photo13.png" alt="" loading="lazy" />
         </Memory>
       </MemoriesContainer>
-    </StyledNext NexusMemories>
+    </StyledNextNexusMemories>
   );
 }
 
@@ -82,7 +82,7 @@ const MemosHeaderH2 = styled(H2)`
   }
 `;
 
-const StyledNext NexusMemories = styled.div`
+const StyledNextNexusMemories = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -125,4 +125,4 @@ const Memory = styled.div`
   }
 `;
 
-export default Next NexusMemories;
+export default NextNexusMemories;

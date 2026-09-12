@@ -108,7 +108,7 @@ const HeadingContainer = styled.div`
   }
 `;
 
-const Next NexusTag = styled.div`
+const NextNexusTag = styled.div`
   min-width: 7%;
   min-height: 7%;
   background: #429fee;

@@ -37,7 +37,7 @@ const SloganH2 = styled(H2)`
 export function LogoAndSloganSection(props: LogoAndSloganProps) {
   return (
     <div>
-      <LogoH1>Next Nexus</LogoH1>
+      <LogoH1>NextNexus</LogoH1>
       <SloganH2>Southern California{`'`}s Flagship Hackathon</SloganH2>
     </div>
   );

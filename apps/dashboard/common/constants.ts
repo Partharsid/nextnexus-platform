@@ -6,11 +6,11 @@ export const ALLOWED_PFP_FORMATS = ['jpeg'];
 export const DEFAULT_OTHERS_FIELD_LABEL = 'Others';
 
 export const hackformLinks = {
-  Next Nexus: {
+  NextNexus: {
     CodeOfConduct:
-      'https://nextnexus23.notion.site/Next Nexus-Code-of-Conduct-d3c1e5b436504543b259e415161eb0d9',
+      'https://nextnexus23.notion.site/NextNexus-Code-of-Conduct-d3c1e5b436504543b259e415161eb0d9',
     TermsOfService:
-      'https://nextnexus23.notion.site/Next Nexus-Events-Terms-of-Service-01c2c3b162184cccbbdffbe9e8c02613',
+      'https://nextnexus23.notion.site/NextNexus-Events-Terms-of-Service-01c2c3b162184cccbbdffbe9e8c02613',
   },
   MLH: {
     CodeOfConduct: 'https://static.mlh.io/docs/mlh-code-of-conduct.pdf',

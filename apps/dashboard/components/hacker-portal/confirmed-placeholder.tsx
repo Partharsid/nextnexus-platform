@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { getEnv } from '@nextnexus/env';
 import { Button } from '@nextnexus/ui-kit-2023';
-import Next NexusGuy from '../svg/nextnexus-guy';
+import NextNexusGuy from '../svg/nextnexus-guy';
 
 export const ConfirmedPlaceholder = () => {
   // const [discordToken, setDiscordToken] = useState<string | null>(null);
@@ -31,7 +31,7 @@ export const ConfirmedPlaceholder = () => {
 
   return (
     <Container>
-      <Next NexusGuy />
+      <NextNexusGuy />
       <Heading>You have confirmed your spot for SoCal Tech Week!</Heading>
       <TextBody>We look forward to seeing you 🌺</TextBody>
       <br />
@@ -46,7 +46,7 @@ export const ConfirmedPlaceholder = () => {
             cursor: 'pointer',
           }}
         >
-          Next Nexus waiver
+          NextNexus waiver
         </a>{' '}
         as soon as possible!
       </TextBody>

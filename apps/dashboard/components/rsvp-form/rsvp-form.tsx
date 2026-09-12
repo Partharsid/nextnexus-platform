@@ -224,7 +224,7 @@ function RSVPForm({ closeModal }: Props) {
                         cursor: 'pointer',
                       }}
                     >
-                      Next Nexus waiver
+                      NextNexus waiver
                     </a>
                     <SpanRed>*</SpanRed>
                   </TextBody>

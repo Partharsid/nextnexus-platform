@@ -5,7 +5,7 @@ import { GlowSpan } from '@nextnexus/ui-kit-2023';
 import { NextNexusRole } from '@nextnexus/types';
 import { Colors2023 } from '@nextnexus/styles';
 import { logout } from '@nextnexus/sso-client';
-import Next NexusLogo from '../svg/nextnexus-logo';
+import NextNexusLogo from '../svg/nextnexus-logo';
 
 /* eslint-disable-next-line */
 export interface TopBarProps {
@@ -23,9 +23,9 @@ export function TopBar(props: TopBarProps) {
           width="200"
           height="100"
           src="/nextnexus-logo.svg"
-          alt="Next Nexus logo"
+          alt="NextNexus logo"
         /> */}
-        <Next NexusLogo />
+        <NextNexusLogo />
       </Link>
       <RightUtilityContainer>
         <UserText>{props.userTag}</UserText>

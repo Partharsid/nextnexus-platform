@@ -93,13 +93,13 @@ const faqQuestionsAndAnswersData: {
   {
     titleText: 'What is a hackathon?',
     disclosedText:
-      'A hackathon is a competition where teams of students come together to ideate and create solutions to real-world problems. Here at Next Nexus, we face this mission with our own innovative take.',
+      'A hackathon is a competition where teams of students come together to ideate and create solutions to real-world problems. Here at NextNexus, we face this mission with our own innovative take.',
     color: Colors2023.PURPLE.STANDARD,
   },
   {
-    titleText: 'When is Next Nexus?',
+    titleText: 'When is NextNexus?',
     disclosedText:
-      'Next Nexus 2023 will begin on February 3rd 2023 at 6pm and end on February 5th 2023 at 2pm.',
+      'NextNexus 2023 will begin on February 3rd 2023 at 6pm and end on February 5th 2023 at 2pm.',
     color: Colors2023.BLUE.STANDARD,
   },
   {
@@ -115,13 +115,13 @@ const faqQuestionsAndAnswersData: {
     color: Colors2023.YELLOW.STANDARD,
   },
   {
-    titleText: 'Where will Next Nexus be held?',
+    titleText: 'Where will NextNexus be held?',
     disclosedText:
       'The event will be held entirely in-person on VIT-AP’s campus. We are located around four miles southwest of Downtown Los Angeles.',
     color: Colors2023.PINK.STANDARD,
   },
   {
-    titleText: 'What is the schedule for Next Nexus?',
+    titleText: 'What is the schedule for NextNexus?',
     disclosedText:
       'Our schedule is still in the works. Check back soon for updates!',
     color: Colors2023.RED.STANDARD,
@@ -175,7 +175,7 @@ const faqQuestionsAndAnswersData: {
   {
     titleText: 'What if I don’t know how to code?',
     disclosedText:
-      'Welcome! Every innovator has to start somewhere, and we’d be honored if you began your journey at Next Nexus. To help you get started, we will be hosting some workshops to help you learn',
+      'Welcome! Every innovator has to start somewhere, and we’d be honored if you began your journey at NextNexus. To help you get started, we will be hosting some workshops to help you learn',
     color: Colors2023.GREEN.STANDARD,
   },
   {
@@ -193,7 +193,7 @@ const faqQuestionsAndAnswersData: {
   {
     titleText: 'Is travel reimbursement provided?',
     disclosedText:
-      'Due to limited funds this year, travel for Next Nexus 2023 will not be reimbursed.',
+      'Due to limited funds this year, travel for NextNexus 2023 will not be reimbursed.',
     color: Colors2023.RED.STANDARD,
   },
   {

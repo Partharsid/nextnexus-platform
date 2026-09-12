@@ -22,7 +22,7 @@ export function SponsorPortal({ user }: Props) {
             textShadow: `0px 0px 10px ${Colors2023.GREEN.DARK}`,
           }}
         >
-          Welcome, {user.firstName}, to Next Nexus!
+          Welcome, {user.firstName}, to NextNexus!
         </H1>
       </WelcomeContainer>
       <MenuContainer>

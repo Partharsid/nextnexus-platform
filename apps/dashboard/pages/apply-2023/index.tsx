@@ -67,7 +67,7 @@ export function Index({ appsOpen }: ServerSideProps) {
     return (
       <Container>
         <CenterContainer>
-          <H3>Apps for Next Nexus 2023 has closed!</H3>
+          <H3>Apps for NextNexus 2023 has closed!</H3>
           <Link
             href={'/'}
             passHref

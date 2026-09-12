@@ -19,7 +19,7 @@ import BattlepassPage from '../battlepass/battlepass-page';
 import { BattlepassAPIProvider } from '../../hooks/use-battlepass-api/use-battlepass-api';
 import ConfirmedPlaceholder from './confirmed-placeholder';
 import { useRouter } from 'next/router';
-import Next NexusGuy from '../svg/nextnexus-guy';
+import NextNexusGuy from '../svg/nextnexus-guy';
 
 type RSVPChoice = 'DECLINE' | 'ACCEPT';
 
@@ -115,8 +115,8 @@ export function HackerPortal({ isEventOpen, appsOpen }: HackerPortalProps) {
   //           style={{ fontSize: 20 }}
   //         >
   //           {appsOpen
-  //             ? 'You have not applied to Next Nexus X yet!'
-  //             : 'Applications for Next Nexus X has closed'}
+  //             ? 'You have not applied to NextNexus X yet!'
+  //             : 'Applications for NextNexus X has closed'}
   //         </GlowSpan>
   //         <ApplyButton>
   //           <Link
@@ -169,7 +169,7 @@ export function HackerPortal({ isEventOpen, appsOpen }: HackerPortalProps) {
   //     <div>
   //       <H2>Are you sure?</H2>
   //       <Text>
-  //         Once submitted, you confirm that you will not be able to join Next Nexus
+  //         Once submitted, you confirm that you will not be able to join NextNexus
   //         X. This action is irreversible.
   //       </Text>
   //     </div>
@@ -304,14 +304,14 @@ export function HackerPortal({ isEventOpen, appsOpen }: HackerPortalProps) {
           />
         </Stars>
         <CenterContainer>
-          <Heading>Next Nexus 2024 Application</Heading>
+          <Heading>NextNexus 2024 Application</Heading>
           <TextBody>
             Ready for another fun year of hacking? Join us at our SoCal Tech
             Week 24 hour hackathon! While the application deadline has passed,
             you can still join our waitlist.
           </TextBody>
 
-          <Next NexusGuy style={{ marginBottom: -30, zIndex: 1, marginTop: 30 }} />
+          <NextNexusGuy style={{ marginBottom: -30, zIndex: 1, marginTop: 30 }} />
           <Link
             href={'/apply-2024'}
             passHref
@@ -328,7 +328,7 @@ export function HackerPortal({ isEventOpen, appsOpen }: HackerPortalProps) {
     return (
       <Container>
         <CenterContainer>
-          <Next NexusGuy />
+          <NextNexusGuy />
           <Heading3>
             Your application has been submitted! We will get back to you a few
             days before the event in the case that a spot opens up.

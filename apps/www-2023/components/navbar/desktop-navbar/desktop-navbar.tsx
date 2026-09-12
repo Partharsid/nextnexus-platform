@@ -13,7 +13,7 @@ export function DesktopNavbar(props: DesktopNavbarProps) {
       <NavbarLeftLogoText>
         <Link href={'/'} anchortagpropsoverride={{ target: '_self' }}>
           <LogoContainer>
-            <img src="./img/logos/logo.svg" alt="Next Nexus 2023 Logo" />
+            <img src="./img/logos/logo.svg" alt="NextNexus 2023 Logo" />
           </LogoContainer>
         </Link>
       </NavbarLeftLogoText>
@@ -47,17 +47,17 @@ export function DesktopNavbar(props: DesktopNavbarProps) {
           <DropdownContent>
             <DropdownContentItem>
               <Link href="https://2022.nextnexus.com">
-                <DropdownText>Next Nexus 2022</DropdownText>
+                <DropdownText>NextNexus 2022</DropdownText>
               </Link>
             </DropdownContentItem>
             <DropdownContentItem>
               <Link href="https://2021.nextnexus.com">
-                <DropdownText>Next Nexus 2021</DropdownText>
+                <DropdownText>NextNexus 2021</DropdownText>
               </Link>
             </DropdownContentItem>
             <DropdownContentItem>
               <Link href="https://2020.nextnexus.com">
-                <DropdownText>Next Nexus 2020</DropdownText>
+                <DropdownText>NextNexus 2020</DropdownText>
               </Link>
             </DropdownContentItem>
           </DropdownContent>

@@ -15,7 +15,7 @@ export function Hero(props: HeroProps) {
         </LogoH1>
         <Container>
           <HeroText>
-            At <GradientSpan>Next Nexus</GradientSpan>, you&apos;ll get a chance to
+            At <GradientSpan>NextNexus</GradientSpan>, you&apos;ll get a chance to
             collaborate in a team of driven individuals, network with industry
             professionals, and work on projects that make a difference, all
             while organizing SoCal&apos;s most student-loved events. If

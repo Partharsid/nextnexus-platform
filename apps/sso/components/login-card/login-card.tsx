@@ -17,8 +17,8 @@ import {
   OneLineText,
 } from '@nextnexus/ui-kit-2023';
 import Link from 'next/link';
-import Next NexusLogo from '../svg/nextnexus-logo';
-import Next NexusGuy from '../svg/nextnexus-guy';
+import NextNexusLogo from '../svg/nextnexus-logo';
+import NextNexusGuy from '../svg/nextnexus-guy';
 
 export function LoginCard() {
   const [hideErrorMessage, setHideErrorMessage] = useState(true);
@@ -60,9 +60,9 @@ export function LoginCard() {
       {/* Add Styled Shapes for page */}
       <BackgroundShapes></BackgroundShapes>
       <StyledAuthCard>
-        <Next NexusGuy />
+        <NextNexusGuy />
         <HeadingContainer>
-          <Next NexusLogo />
+          <NextNexusLogo />
           <h2 className="m-0 mb-[10px] text-lg">Sign-In</h2>
         </HeadingContainer>
         <StyledForm onSubmit={handleSubmit}>
@@ -159,7 +159,7 @@ const HeadingContainer = styled.div`
   // }
 `;
 
-const Next NexusTag = styled.div`
+const NextNexusTag = styled.div`
   min-width: 7%;
   min-height: 7%;
   background: #429fee;

@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import Next NexusLogo2 from '../../public/nextnexus-logo2.svg';
+import NextNexusLogo2 from '../../public/nextnexus-logo2.svg';
 import SideNavButton from './side-nav-button';
 import ArrowRight from '../../public/arrow-right.svg';
 import { useState } from 'react';
@@ -39,7 +39,7 @@ const SideNav = ({ options }: Props) => {
         }}
       >
         <div style={{ margin: '50px 0px 50px 0px' }}>
-          <Image src={Next NexusLogo2} alt="Next Nexus" width={150} height={75} />
+          <Image src={NextNexusLogo2} alt="NextNexus" width={150} height={75} />
         </div>
 
         {options.map((option) => (
@@ -56,7 +56,7 @@ const SideNav = ({ options }: Props) => {
 
       <div style={{ width: '100%' }}>
         <div style={{ fontSize: 11, margin: 25 }}>
-          <div style={{ marginBottom: 5 }}>Contact Next Nexus Support</div>
+          <div style={{ marginBottom: 5 }}>Contact NextNexus Support</div>
           <div>(213)-513-1234</div>
           <div>team@nextnexus.com</div>
         </div>

@@ -1,16 +1,16 @@
 import { H1, H3, Link } from '@nextnexus/ui';
 import Image from 'next/image';
 import styled from 'styled-components';
-import Next NexusGuy from '../svg/nextnexus-guy';
+import NextNexusGuy from '../svg/nextnexus-guy';
 
 export const DeclinedPlaceholder = () => {
   return (
     <Container>
-      <Next NexusGuy />
+      <NextNexusGuy />
       <Heading>You have declined your spot for SoCal Tech Week</Heading>
       <TextBody>
         Bummer 😞 Welp, there{"'"}s always another chance to build something
-        cool 😄 Make sure to stay up to date with Next Nexus through our{' '}
+        cool 😄 Make sure to stay up to date with NextNexus through our{' '}
         <Link href="https://instagram.com/nextnexusofficial/" passHref underline>
           social media
         </Link>{' '}

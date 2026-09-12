@@ -69,7 +69,7 @@ export function VerifyCard() {
 
   return (
     <StyledAuthCard>
-      <h2 className="m-0 mb-[10px] font-light text-3xl">Next Nexus</h2>
+      <h2 className="m-0 mb-[10px] font-light text-3xl">NextNexus</h2>
       <h2 className="m-0 mb-[10px] font-bold text-4xl">Verify Email Address</h2>
 
       <OTPInput

@@ -13,9 +13,9 @@ function RSVPClosedPlaceholder() {
         priority
         alt="Purple planet"
       />
-      <H3>RSVP for Next Nexus X has closed!</H3>
+      <H3>RSVP for NextNexus X has closed!</H3>
       <Text>
-        We have closed RSVPs for Next Nexus X. If you think this is a mistake, let
+        We have closed RSVPs for NextNexus X. If you think this is a mistake, let
         us know at{' '}
         <Link
           href="mailto:team@nextnexus.com"
@@ -29,7 +29,7 @@ function RSVPClosedPlaceholder() {
         </Link>{' '}
       </Text>
       <Text>
-        Next Nexus is committed to providing participants with the best experience
+        NextNexus is committed to providing participants with the best experience
         possible. If there’s anything we can do to improve your time at our
         event, please let us know!
       </Text>

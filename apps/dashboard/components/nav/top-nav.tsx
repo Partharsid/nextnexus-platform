@@ -143,11 +143,11 @@ function StyledTopNav() {
             <HeadingContainer>
               <Image
                 src={nextnexusIcon}
-                alt="Next Nexus Logo"
+                alt="NextNexus Logo"
                 width={40}
                 height={40}
               />
-              <StyledH1> Next Nexus X </StyledH1>
+              <StyledH1> NextNexus X </StyledH1>
             </HeadingContainer>
             <HeadingContainer style={{ marginRight: '20px' }}>
               {items.map((it) => (

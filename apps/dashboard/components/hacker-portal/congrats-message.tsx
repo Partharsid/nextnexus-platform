@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { H3, Text, Link } from '@nextnexus/ui';
 import { GlowSpan } from '@nextnexus/ui-kit-2023';
 import { Colors2023 } from '@nextnexus/styles';
-import Next NexusGuy from '../svg/nextnexus-guy';
+import NextNexusGuy from '../svg/nextnexus-guy';
 import styled from 'styled-components';
 import { Colors } from '@hacksc/sctw-ui-kit';
 
@@ -16,7 +16,7 @@ export const CongratsMessage = () => {
         textAlign: 'left',
       }}
     >
-      <Next NexusGuy />
+      <NextNexusGuy />
       <Heading3>Congratulations on being accepted to SoCal Tech Week!</Heading3>
       <TextBody>
         We are so excited to welcome you to our event this year, and hope that
@@ -49,7 +49,7 @@ export const CongratsMessage = () => {
         at least 12 hours prior to the start of the event.
       </TextBody>
       <TextBody>
-        Next Nexus is committed to providing participants with the best experience
+        NextNexus is committed to providing participants with the best experience
         possible. If there’s anything we can do to improve your time at our
         event, please let us know!
       </TextBody>
