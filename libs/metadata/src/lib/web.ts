@@ -1,3 +1,3 @@
-export const getWebTitle = (pre: string, suf = 'Next Nexus Platform') => {
+export const getWebTitle = (pre: string, suf = 'NextNexus') => {
   return `${pre} | ${suf}`;
 };

@@ -9,7 +9,7 @@ import { HackerTab } from '../../components/sponsor-portal/hacker-tab';
 import HackerProfile from '../../components/sponsor-portal/hacker-profile';
 import { useRouter } from 'next/router';
 import { Attendee } from '../../common/mock-sponsor';
-import { useNext Nexus PlatformSupabase } from '@nextnexus/nextnexus-supabase-context';
+import { useNextNexusSupabase } from '@nextnexus/nextnexus-supabase-context';
 import { NextNexusRole } from '@nextnexus/types';
 import { ParagraphText } from '@nextnexus/ui-kit-2023';
 import { getWordCount } from '../../common/utils';
@@ -61,8 +61,8 @@ const Index = () => {
   const [activeEvent, setActiveEvent] = useState<string | null>(null);
 
   const router = useRouter();
-  const supabase = useNext Nexus PlatformSupabase().supabase.getClient();
-  const nextnexusSupabaseClient = useNext Nexus PlatformSupabase().supabase;
+  const supabase = useNextNexusSupabase().supabase.getClient();
+  const nextnexusSupabaseClient = useNextNexusSupabase().supabase;
 
   useEffect(() => {
     searchEvent(nextnexusSupabaseClient).then(setEvents);
@@ -117,7 +117,7 @@ const Index = () => {
     async function fetchEvents() {
       try {
         const events = await getAllEvents(
-          getCookie(getEnv().Next Nexus Platform.Cookies.accessTokenName)?.toString()
+          getCookie(getEnv().NextNexus.Cookies.accessTokenName)?.toString()
         );
         setEvents(events);
 
@@ -148,7 +148,7 @@ const Index = () => {
       try {
         const pinnedEvents = await getPinnedEvents(
           user.id,
-          getCookie(getEnv().Next Nexus Platform.Cookies.accessTokenName)?.toString()
+          getCookie(getEnv().NextNexus.Cookies.accessTokenName)?.toString()
         );
         setPinnedEvents(pinnedEvents);
       } catch (e) {

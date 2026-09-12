@@ -1,12 +1,12 @@
 import { DashboardRepository } from '../../../repository/dashboard.repository';
 import { NextApiRequest, NextApiResponse } from 'next';
 import { container } from 'tsyringe';
-import { Next Nexus PlatformSupabaseClient } from '@nextnexus/nextnexus-supabase-client';
+import { NextNexusSupabaseClient } from '@nextnexus/nextnexus-supabase-client';
 import { getEnv } from '@nextnexus/env';
 
 const getTokensFromCookies = (req: NextApiRequest) => {
-  const accessToken = req.cookies[getEnv().Next Nexus Platform.Cookies.accessTokenName];
-  const refreshToken = req.cookies[getEnv().Next Nexus Platform.Cookies.refreshTokenName];
+  const accessToken = req.cookies[getEnv().NextNexus.Cookies.accessTokenName];
+  const refreshToken = req.cookies[getEnv().NextNexus.Cookies.refreshTokenName];
   return { accessToken, refreshToken };
 };
 
@@ -45,7 +45,7 @@ export default async function handler(
 
     // check if user is the one making invite
     const { accessToken, refreshToken } = getTokensFromCookies(req);
-    const hbc = container.resolve(Next Nexus PlatformSupabaseClient);
+    const hbc = container.resolve(NextNexusSupabaseClient);
     // const user = await hbc.getUserProfile(accessToken, refreshToken);
     // if(user.user_id!==invitedId) {
     //   throw new Error("You may not accept this invite");

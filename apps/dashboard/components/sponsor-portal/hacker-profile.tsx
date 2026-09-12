@@ -5,7 +5,7 @@ import { H1 } from '@nextnexus/ui';
 import Image from 'next/image';
 import { Attendee } from '../../common/mock-sponsor';
 import { useEffect, useState } from 'react';
-import { useNext Nexus PlatformSupabase } from '@nextnexus/nextnexus-supabase-context';
+import { useNextNexusSupabase } from '@nextnexus/nextnexus-supabase-context';
 import { SponsorServiceAPI } from '../../common/api';
 import { Heading, BodyText, Colors as SctwColors } from '@hacksc/sctw-ui-kit';
 
@@ -17,7 +17,7 @@ interface Props {
 
 export function HackerProfile({ hacker, companyId, noteOnClick }: Props) {
   const [quickNote, setQuickNote] = useState('');
-  const supabase = useNext Nexus PlatformSupabase().supabase.getClient();
+  const supabase = useNextNexusSupabase().supabase.getClient();
 
   useEffect(() => {
     setQuickNote(hacker.quick_notes);

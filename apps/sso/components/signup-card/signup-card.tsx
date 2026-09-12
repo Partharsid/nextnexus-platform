@@ -14,7 +14,7 @@ import {
   ColorSpanBold,
   OneLinePassword,
 } from '@nextnexus/ui-kit-2023';
-import { useNext Nexus PlatformSupabase } from '@nextnexus/nextnexus-supabase-context';
+import { useNextNexusSupabase } from '@nextnexus/nextnexus-supabase-context';
 import { Input } from '../auth-components/styled-input';
 import { StyledAuthCard } from '../auth-components/styled-card';
 import { BackgroundShapes } from '../colored-shapes/background-shapes';
@@ -27,7 +27,7 @@ export interface SignUpProps {}
 
 export function SignUpCard(props: SignUpProps) {
   const router = useRouter();
-  const { supabase } = useNext Nexus PlatformSupabase();
+  const { supabase } = useNextNexusSupabase();
   const [hideErrorMessage, setHideErrorMessage] = useState(true);
   const [errorMessage, setErrorMessage] = useState('');
   const [signUpState, setSignUpState] = useState('');

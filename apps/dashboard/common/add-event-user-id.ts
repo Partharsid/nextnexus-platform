@@ -1,10 +1,10 @@
-import { Next Nexus PlatformSupabaseClient } from '@nextnexus/nextnexus-supabase-client';
+import { NextNexusSupabaseClient } from '@nextnexus/nextnexus-supabase-client';
 import { PostgrestError } from '@supabase/supabase-js';
 
 export default async function addEventUserId(
   event_id: number,
   user_id: string,
-  supabase: Next Nexus PlatformSupabaseClient
+  supabase: NextNexusSupabaseClient
 ): Promise<PostgrestError | true> {
   const eventnameMatches = await supabase
     .getClient()

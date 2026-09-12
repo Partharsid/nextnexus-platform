@@ -2,8 +2,8 @@ import { createClient } from '@supabase/supabase-js';
 import { getEnv } from '@nextnexus/env';
 import type { Event, EventAdmin } from './types';
 
-const apiUrl = getEnv().Next Nexus Platform.Supabase.apiUrl;
-const serviceKey = getEnv().Next Nexus Platform.Supabase.serviceKey;
+const apiUrl = getEnv().NextNexus.Supabase.apiUrl;
+const serviceKey = getEnv().NextNexus.Supabase.serviceKey;
 
 const client = createClient(apiUrl, serviceKey, { db: { schema: 'events' } });
 

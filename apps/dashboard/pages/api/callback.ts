@@ -3,7 +3,7 @@ import { callbackApiHandler } from '@nextnexus/sso-client';
 import { getEnv } from '@nextnexus/env';
 
 const handler: NextApiHandler = callbackApiHandler(
-  getEnv().Next Nexus Platform.AppURL.portal
+  getEnv().NextNexus.AppURL.portal
 );
 
 export default handler;

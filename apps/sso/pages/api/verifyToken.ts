@@ -1,4 +1,4 @@
-import { Next Nexus PlatformSupabaseClient } from '@nextnexus/nextnexus-supabase-client';
+import { NextNexusSupabaseClient } from '@nextnexus/nextnexus-supabase-client';
 import { NextApiHandler } from 'next';
 import { container } from 'tsyringe';
 
@@ -9,7 +9,7 @@ const handler: NextApiHandler = async (req, res) => {
   if (req.method === 'POST') {
     const { access_token, refresh_token } = req.body;
     const { data, error } = await container
-      .resolve(Next Nexus PlatformSupabaseClient)
+      .resolve(NextNexusSupabaseClient)
       .verifyToken(access_token, refresh_token);
     res.status(200).json({ data, error });
   }

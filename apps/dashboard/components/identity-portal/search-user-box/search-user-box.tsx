@@ -1,4 +1,4 @@
-import { useNext Nexus PlatformSupabase } from '@nextnexus/nextnexus-supabase-context';
+import { useNextNexusSupabase } from '@nextnexus/nextnexus-supabase-context';
 import { Text, BoldText, Modal } from '@nextnexus/ui';
 import { Search } from '@nextnexus/ui-kit-2023';
 import { useState } from 'react';
@@ -16,7 +16,7 @@ export function SearchUserBox({ onClick, placeholder }: SearchUserBoxProps) {
     [] as Awaited<ReturnType<typeof searchUser>>
   );
 
-  const { supabase } = useNext Nexus PlatformSupabase();
+  const { supabase } = useNextNexusSupabase();
 
   async function search(name: string) {
     setSearchRes(await searchUser(name, supabase));

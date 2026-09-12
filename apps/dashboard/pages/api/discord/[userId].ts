@@ -2,7 +2,7 @@ import 'reflect-metadata';
 import { NextApiRequest, NextApiResponse } from 'next';
 import { container } from 'tsyringe';
 import { getEnv } from '@nextnexus/env';
-import { Next Nexus PlatformSupabaseClient } from '@nextnexus/nextnexus-supabase-client';
+import { NextNexusSupabaseClient } from '@nextnexus/nextnexus-supabase-client';
 import { DiscordRepository } from '../../../repository/discord.repository';
 
 export default async function handler(
@@ -16,10 +16,10 @@ export default async function handler(
   try {
     //Get logic
     if (req.method === 'GET') {
-      const supabase = new Next Nexus PlatformSupabaseClient();
+      const supabase = new NextNexusSupabaseClient();
       supabase.setOptions({ useServiceKey: true });
       const user = await supabase.getUserProfile(
-        req.cookies[getEnv().Next Nexus Platform.Cookies.accessTokenName]
+        req.cookies[getEnv().NextNexus.Cookies.accessTokenName]
       );
       if (stringifyId !== user.user_id) {
         return res.status(401).json({ message: 'Invalid access token' });

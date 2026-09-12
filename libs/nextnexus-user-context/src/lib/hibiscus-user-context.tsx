@@ -9,8 +9,8 @@ import {
 } from 'react';
 import { getEnv } from '@nextnexus/env';
 import { ApplicationStatus } from '@nextnexus/types';
-import { Next Nexus PlatformSupabaseClient } from '@nextnexus/nextnexus-supabase-client';
-import { useNext Nexus PlatformSupabase } from '@nextnexus/nextnexus-supabase-context';
+import { NextNexusSupabaseClient } from '@nextnexus/nextnexus-supabase-client';
+import { useNextNexusSupabase } from '@nextnexus/nextnexus-supabase-context';
 import * as React from 'react';
 
 const NextNexusUserContext = React.createContext<{
@@ -24,7 +24,7 @@ const NextNexusUserContext = React.createContext<{
 const getUserProfile = async (
   accessToken: string,
   refreshToken: string,
-  supabase: Next Nexus PlatformSupabaseClient
+  supabase: NextNexusSupabaseClient
 ): Promise<NextNexusUser> => {
   // Get user profile from db
   // uses cookie set from SSO
@@ -61,16 +61,16 @@ const getUserProfile = async (
   }
 };
 
-// MAKE SURE TO NEST WITHIN Next Nexus PlatformSupabaseProvider
+// MAKE SURE TO NEST WITHIN NextNexusSupabaseProvider
 export const NextNexusUserProvider = (props: React.PropsWithChildren) => {
   const [user, setUser] = useState<NextNexusUser | null>(null);
-  const { supabase } = useNext Nexus PlatformSupabase();
+  const { supabase } = useNextNexusSupabase();
 
   const accessToken = getCookie(
-    getEnv().Next Nexus Platform.Cookies.accessTokenName
+    getEnv().NextNexus.Cookies.accessTokenName
   ) as string;
   const refreshToken = getCookie(
-    getEnv().Next Nexus Platform.Cookies.refreshTokenName
+    getEnv().NextNexus.Cookies.refreshTokenName
   ) as string;
 
   // fetch it on initial load in

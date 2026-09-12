@@ -32,7 +32,7 @@ export function Index() {
   const fetchData = async (projectId: string) => {
     try {
       const accessToken = getCookie(
-        env.Next Nexus Platform.Cookies.accessTokenName
+        env.NextNexus.Cookies.accessTokenName
       )?.toString();
 
       const response = await axios.get(
@@ -57,7 +57,7 @@ export function Index() {
   }
 
   if (user?.role !== NextNexusRole.JUDGE) {
-    window.location.assign(env.Next Nexus Platform.AppURL.portal);
+    window.location.assign(env.NextNexus.AppURL.portal);
     return <></>;
   }
 

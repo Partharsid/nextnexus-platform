@@ -14,7 +14,7 @@ import { getEnv } from '@nextnexus/env';
 export class HackformSubmissionDataClient {
   private readonly ddb: DynamoDBClient;
   private readonly tableName: string =
-    getEnv().Next Nexus Platform.Hackform.HackerAppResponsesTable; // table name in the database
+    getEnv().NextNexus.Hackform.HackerAppResponsesTable; // table name in the database
 
   constructor() {
     this.ddb = new DynamoDBClient({

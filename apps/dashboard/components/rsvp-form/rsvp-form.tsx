@@ -6,7 +6,7 @@ import { Button, Checkbox, DatePicker } from '@nextnexus/ui-kit-2023';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { SpanRed } from '../red-span';
-import { useNext Nexus PlatformSupabase } from '@nextnexus/nextnexus-supabase-context';
+import { useNextNexusSupabase } from '@nextnexus/nextnexus-supabase-context';
 import useNextNexusUser from '../../hooks/use-nextnexus-user/use-nextnexus-user';
 import { toast } from 'react-hot-toast';
 import * as Sentry from '@sentry/browser';
@@ -23,9 +23,9 @@ interface Props {
 function RSVPForm({ closeModal }: Props) {
   // const [discordToken, setDiscordToken] = useState<string | null>(null);
   const { user, updateUser } = useNextNexusUser();
-  const { supabase } = useNext Nexus PlatformSupabase();
+  const { supabase } = useNextNexusSupabase();
 
-  const discordInvite = getEnv().Next Nexus Platform.Discord.InviteUrl;
+  const discordInvite = getEnv().NextNexus.Discord.InviteUrl;
 
   // useEffect(() => {
   //   const fetchData = async () => {
@@ -216,7 +216,7 @@ function RSVPForm({ closeModal }: Props) {
                   <TextBody>
                     I confirm that I have completed and signed the{' '}
                     <a
-                      href={getEnv().Next Nexus Platform.RSVPForm.WaiverURL}
+                      href={getEnv().NextNexus.RSVPForm.WaiverURL}
                       target="_blank"
                       rel="noreferrer"
                       style={{
@@ -246,7 +246,7 @@ function RSVPForm({ closeModal }: Props) {
                   <TextBody>
                     I confirm that I have read the{' '}
                     <a
-                      href={getEnv().Next Nexus Platform.RSVPForm.HackerPacketURL}
+                      href={getEnv().NextNexus.RSVPForm.HackerPacketURL}
                       target="_blank"
                       rel="noreferrer"
                       style={{

@@ -1,4 +1,4 @@
-import { useNext Nexus PlatformSupabase } from '@nextnexus/nextnexus-supabase-context';
+import { useNextNexusSupabase } from '@nextnexus/nextnexus-supabase-context';
 import React from 'react';
 import {
   BattlepassAPI,
@@ -13,7 +13,7 @@ interface Props extends React.PropsWithChildren {
 }
 
 export const BattlepassAPIProvider = (props: Props) => {
-  const { supabase } = useNext Nexus PlatformSupabase();
+  const { supabase } = useNextNexusSupabase();
   const battlepassAPIInstance = new BattlepassAPI(props.mock, supabase);
   return (
     <BattlepassAPIContext.Provider value={battlepassAPIInstance}>

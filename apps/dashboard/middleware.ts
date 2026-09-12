@@ -6,20 +6,20 @@ import { TSRV_RELEASE_FLAG } from './common/constants';
 export async function middleware(request: NextRequest) {
   // Removed: Intercept requests to application page and redirect to signup page if no session detected
   // const res = await middlewareHandler(
-  //   `${getEnv().Next Nexus Platform.AppURL.portal}/api/callback`,
+  //   `${getEnv().NextNexus.AppURL.portal}/api/callback`,
   //   ['/apply-2023'],
-  //   `${getEnv().Next Nexus Platform.AppURL.sso}/signup`,
+  //   `${getEnv().NextNexus.AppURL.sso}/signup`,
   //   false
   // )(request);
 
   const regTeamAPIs = /\/api\/(team|organizer)/g;
   if (regTeamAPIs.test(request.nextUrl.pathname) && !TSRV_RELEASE_FLAG) {
     return NextResponse.redirect(
-      `${getEnv().Next Nexus Platform.AppURL.sso}/api/unauthorized`
+      `${getEnv().NextNexus.AppURL.sso}/api/unauthorized`
     );
   }
 
-  return middlewareHandler(`${getEnv().Next Nexus Platform.AppURL.portal}/api/callback`)(
+  return middlewareHandler(`${getEnv().NextNexus.AppURL.portal}/api/callback`)(
     request
   );
 }

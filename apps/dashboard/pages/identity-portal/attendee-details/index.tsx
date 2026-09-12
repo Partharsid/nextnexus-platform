@@ -17,7 +17,7 @@ import {
   BATTLEPASS_LEVEL_POINTS,
   calculateBattlepassProgress,
 } from '../../../common/calculate-battlepass-progress';
-import { useNext Nexus PlatformSupabase } from '@nextnexus/nextnexus-supabase-context';
+import { useNextNexusSupabase } from '@nextnexus/nextnexus-supabase-context';
 import BattlepassPointsBar from 'apps/dashboard/components/battlepass/battlepass-points-bar';
 import { BsExclamationTriangle } from 'react-icons/bs';
 import { MdCheckCircleOutline } from 'react-icons/md';
@@ -45,7 +45,7 @@ export function Index() {
   const [bonusPoints, setBonusPoints] = useState(null);
   const [hackerBonusPoints, setHackerBonusPoints] = useState(null);
   const router = useRouter();
-  const { supabase } = useNext Nexus PlatformSupabase();
+  const { supabase } = useNextNexusSupabase();
 
   useEffect(() => {
     async function getUserProfile(id: string, wristband = true): Promise<any> {

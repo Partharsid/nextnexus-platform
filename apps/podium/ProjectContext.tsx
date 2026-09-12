@@ -37,13 +37,13 @@ export const ProjectContextProvider = (props: React.PropsWithChildren) => {
           // Get judge associated vertical
           const judgeDetails = await getJudgeDetails(
             user.id,
-            getCookie(env.Next Nexus Platform.Cookies.accessTokenName)?.toString()
+            getCookie(env.NextNexus.Cookies.accessTokenName)?.toString()
           );
 
           const [unrankedPromises, rankedPromises] = await getProjects(
             user.id,
             judgeDetails.verticalId,
-            getCookie(env.Next Nexus Platform.Cookies.accessTokenName)?.toString()
+            getCookie(env.NextNexus.Cookies.accessTokenName)?.toString()
           );
 
           const unrankedData = await Promise.all(unrankedPromises);

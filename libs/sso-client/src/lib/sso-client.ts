@@ -12,7 +12,7 @@ import {
 } from '@supabase/supabase-js';
 
 /**
- * Generates the NextJS middleware needed to integrate with the Next Nexus Platform SSO system
+ * Generates the NextJS middleware needed to integrate with the NextNexus SSO system
  * Ensure that a suitable config is also exported in the middleware file such that static files are not blocked
  *
  * @param callbackUrl URL which the SSO will send a POST request to set a cookie on the app
@@ -37,7 +37,7 @@ export const middlewareHandler =
     }
 
     if (request.nextUrl.pathname.startsWith('/hacker-packet')) {
-      return NextResponse.redirect(getEnv().Next Nexus Platform.RSVPForm.HackerPacketURL);
+      return NextResponse.redirect(getEnv().NextNexus.RSVPForm.HackerPacketURL);
     }
 
     // Special routes
@@ -47,26 +47,26 @@ export const middlewareHandler =
       if (
         auth_header !== null &&
         auth_header.startsWith('Bearer ') &&
-        auth_header.substring(7) === getEnv().Next Nexus Platform.Hackform.TallyAPIToken
+        auth_header.substring(7) === getEnv().NextNexus.Hackform.TallyAPIToken
       ) {
         return NextResponse.next();
       } else {
         return NextResponse.redirect(
-          `${getEnv().Next Nexus Platform.AppURL.sso}/api/unauthorized`
+          `${getEnv().NextNexus.AppURL.sso}/api/unauthorized`
         );
       }
     }
 
     let access_token = request.cookies.get(
-      getEnv().Next Nexus Platform.Cookies.accessTokenName
+      getEnv().NextNexus.Cookies.accessTokenName
     );
     let refresh_token = request.cookies.get(
-      getEnv().Next Nexus Platform.Cookies.refreshTokenName
+      getEnv().NextNexus.Cookies.refreshTokenName
     );
 
     const access_token_init = access_token;
 
-    if (getEnv().Next Nexus Platform.Cookies.disableSSO) {
+    if (getEnv().NextNexus.Cookies.disableSSO) {
       [access_token, refresh_token] = await initializeFakeUser(
         access_token,
         refresh_token
@@ -97,22 +97,22 @@ export const middlewareHandler =
             if (access_token !== access_token_init) {
               // Only set cookies if access token actually changed
               res.cookies.set(
-                getEnv().Next Nexus Platform.Cookies.accessTokenName,
+                getEnv().NextNexus.Cookies.accessTokenName,
                 access_token,
                 {
                   path: '/',
-                  domain: getEnv().Next Nexus Platform.AppURL.baseDomain,
-                  maxAge: Number.parseInt(getEnv().Next Nexus Platform.Cookies.maxAge),
+                  domain: getEnv().NextNexus.AppURL.baseDomain,
+                  maxAge: Number.parseInt(getEnv().NextNexus.Cookies.maxAge),
                   sameSite: 'lax',
                 }
               );
               res.cookies.set(
-                getEnv().Next Nexus Platform.Cookies.refreshTokenName,
+                getEnv().NextNexus.Cookies.refreshTokenName,
                 refresh_token,
                 {
                   path: '/',
-                  domain: getEnv().Next Nexus Platform.AppURL.baseDomain,
-                  maxAge: Number.parseInt(getEnv().Next Nexus Platform.Cookies.maxAge),
+                  domain: getEnv().NextNexus.AppURL.baseDomain,
+                  maxAge: Number.parseInt(getEnv().NextNexus.Cookies.maxAge),
                   sameSite: 'lax',
                 }
               );
@@ -126,7 +126,7 @@ export const middlewareHandler =
         // Redirect to show unauthorized if it is API endpoint
         if (path.length >= 2 && path[1] === 'api') {
           return NextResponse.redirect(
-            `${getEnv().Next Nexus Platform.AppURL.sso}/api/unauthorized`
+            `${getEnv().NextNexus.AppURL.sso}/api/unauthorized`
           );
         }
 
@@ -163,10 +163,10 @@ export const callbackApiHandler =
   async (req: NextApiRequest, res: NextApiResponse) => {
     // Handle pre-flight requests
     if (req.method === 'OPTIONS') {
-      if (req.headers.origin === getEnv().Next Nexus Platform.AppURL.sso) {
+      if (req.headers.origin === getEnv().NextNexus.AppURL.sso) {
         res.setHeader(
           'Access-Control-Allow-Origin',
-          getEnv().Next Nexus Platform.AppURL.sso
+          getEnv().NextNexus.AppURL.sso
         );
         res.setHeader(
           'Access-Control-Allow-Headers',
@@ -183,7 +183,7 @@ export const callbackApiHandler =
 
         res.setHeader(
           'Access-Control-Allow-Origin',
-          getEnv().Next Nexus Platform.AppURL.sso
+          getEnv().NextNexus.AppURL.sso
         );
         res.setHeader(
           'Access-Control-Allow-Headers',
@@ -205,8 +205,8 @@ export const callbackApiHandler =
   };
 
 const VALID_CALLBACKS = [
-  getEnv().Next Nexus Platform.AppURL.ssoMockApp,
-  getEnv().Next Nexus Platform.AppURL.portal,
+  getEnv().NextNexus.AppURL.ssoMockApp,
+  getEnv().NextNexus.AppURL.portal,
 ];
 
 /**
@@ -279,7 +279,7 @@ async function verifyToken(
 }
 
 export async function logout() {
-  window.location.replace(`${getEnv().Next Nexus Platform.AppURL.sso}/logout`);
+  window.location.replace(`${getEnv().NextNexus.AppURL.sso}/logout`);
 }
 
 function generateRedirectUrl(
@@ -288,7 +288,7 @@ function generateRedirectUrl(
   redirect?: string
 ): URL {
   const redirectUrl = new URL(
-    redirect ?? `${getEnv().Next Nexus Platform.AppURL.sso}/login`
+    redirect ?? `${getEnv().NextNexus.AppURL.sso}/login`
   );
   redirectUrl.search = `callback=${callbackUrl}${encodeURIComponent(
     `?redirect=${path}`
@@ -338,7 +338,7 @@ async function initializeFakeUser(access_token: string, refresh_token: string) {
     const email = faker.internet.email();
     const password = faker.internet.password();
 
-    const role = getEnv().Next Nexus Platform.SSO.DefaultRole;
+    const role = getEnv().NextNexus.SSO.DefaultRole;
 
     if (user == null || session == null) {
       ({
@@ -354,7 +354,7 @@ async function initializeFakeUser(access_token: string, refresh_token: string) {
           // Judge
           await initializeJudgeUser(
             user.id,
-            getEnv().Next Nexus Platform.SSO.DefaultJudgeVertical
+            getEnv().NextNexus.SSO.DefaultJudgeVertical
           );
         }
 
@@ -390,11 +390,11 @@ async function initializeJudgeUser(userId: string, verticalId: string) {
   const env = getEnv();
 
   // Must use fetch in middleware
-  const res = await fetch(`${env.Next Nexus Platform.Podium.ApiUrl}/judges/${userId}`, {
+  const res = await fetch(`${env.NextNexus.Podium.ApiUrl}/judges/${userId}`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      Authorization: `Bearer ${env.Next Nexus Platform.Podium.ApiMasterToken}`,
+      Authorization: `Bearer ${env.NextNexus.Podium.ApiMasterToken}`,
     },
     body: JSON.stringify({ verticalId }),
   });
@@ -406,7 +406,7 @@ async function initializeJudgeUser(userId: string, verticalId: string) {
 
 function createSupabaseServiceClient(): SupabaseClient {
   return createClient(
-    getEnv().Next Nexus Platform.Supabase.apiUrl,
-    getEnv().Next Nexus Platform.Supabase.serviceKey
+    getEnv().NextNexus.Supabase.apiUrl,
+    getEnv().NextNexus.Supabase.serviceKey
   );
 }

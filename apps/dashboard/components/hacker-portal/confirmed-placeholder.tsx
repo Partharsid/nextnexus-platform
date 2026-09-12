@@ -12,7 +12,7 @@ export const ConfirmedPlaceholder = () => {
   // const [discordToken, setDiscordToken] = useState<string | null>(null);
   const { user } = useNextNexusUser();
 
-  const discordInvite = getEnv().Next Nexus Platform.Discord.InviteUrl;
+  const discordInvite = getEnv().NextNexus.Discord.InviteUrl;
 
   // useEffect(() => {
   //   const fetchData = async () => {
@@ -38,7 +38,7 @@ export const ConfirmedPlaceholder = () => {
       {/* <TextBody>
         If you haven&apos;t already, please complete and sign the{' '}
         <a
-          href={getEnv().Next Nexus Platform.RSVPForm.WaiverURL}
+          href={getEnv().NextNexus.RSVPForm.WaiverURL}
           target="_blank"
           rel="noreferrer"
           style={{
@@ -74,7 +74,7 @@ export const ConfirmedPlaceholder = () => {
 
       <TextBody>Review the Hacker Welcome Packet below!</TextBody>
       <a
-        href={getEnv().Next Nexus Platform.RSVPForm.HackerPacketURL}
+        href={getEnv().NextNexus.RSVPForm.HackerPacketURL}
         target="_blank"
         rel="noreferrer"
       >

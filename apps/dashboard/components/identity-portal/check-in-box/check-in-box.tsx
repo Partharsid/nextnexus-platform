@@ -1,5 +1,5 @@
 import { getEnv } from '@nextnexus/env';
-import { useNext Nexus PlatformSupabase } from '@nextnexus/nextnexus-supabase-context';
+import { useNextNexusSupabase } from '@nextnexus/nextnexus-supabase-context';
 import { Colors2023 } from '@nextnexus/styles';
 import { Modal } from '@nextnexus/ui';
 import { Button, Checkbox, OneLineText, Search } from '@nextnexus/ui-kit-2023';
@@ -26,7 +26,7 @@ export function CheckInBox(props: CheckInBoxProps) {
   const [discordVerified, setDiscordVerified] = useState(false);
   const [waiver, setWaiver] = useState(false);
   const [errorMessage, setErrorMessage] = useState(null);
-  const { supabase } = useNext Nexus PlatformSupabase();
+  const { supabase } = useNextNexusSupabase();
   const inputRef = useRef<HTMLInputElement | null>(null);
 
   useEffect(() => {
@@ -49,7 +49,7 @@ export function CheckInBox(props: CheckInBoxProps) {
   async function checkDiscord(userId: string): Promise<boolean> {
     try {
       const res = await axios.get(
-        `${getEnv().Next Nexus Platform.Discord.ApiUrl}/checkUserIsVerified/${userId}`
+        `${getEnv().NextNexus.Discord.ApiUrl}/checkUserIsVerified/${userId}`
       );
 
       return res.data.verified;

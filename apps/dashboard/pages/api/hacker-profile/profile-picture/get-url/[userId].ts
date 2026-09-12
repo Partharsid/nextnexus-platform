@@ -3,7 +3,7 @@ import { HackFromProfilePictureClient } from '@nextnexus/hackform-client';
 import { NextApiHandler } from 'next';
 import { container } from 'tsyringe';
 import { rateLimitHandler } from '../../../../../common/utils';
-import { Next Nexus PlatformSupabaseClient } from '@nextnexus/nextnexus-supabase-client';
+import { NextNexusSupabaseClient } from '@nextnexus/nextnexus-supabase-client';
 
 const handler: NextApiHandler = async (req, res) => {
   const { userId } = req.query;

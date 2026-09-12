@@ -60,7 +60,7 @@ const SendComment = ({
     console.log(commentText);
     const endpoint = `${HIBISCUS_PODIUM_API_URL}/comments/${projectId}/user/${user.id}`;
     const accessToken = getCookie(
-      env.Next Nexus Platform.Cookies.accessTokenName
+      env.NextNexus.Cookies.accessTokenName
     )?.toString();
     try {
       const response = await axios.post(

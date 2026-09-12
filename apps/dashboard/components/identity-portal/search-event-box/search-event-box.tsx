@@ -4,7 +4,7 @@ import { useState } from 'react';
 import searchEvent from '../../../common/search-event';
 import { ScrollableListBox } from '../scrollable-list-box/scrollable-list-box';
 import { useRouter } from 'next/router';
-import { useNext Nexus PlatformSupabase } from '@nextnexus/nextnexus-supabase-context';
+import { useNextNexusSupabase } from '@nextnexus/nextnexus-supabase-context';
 
 export function SearchEventBox() {
   const router = useRouter();
@@ -13,7 +13,7 @@ export function SearchEventBox() {
     [] as Awaited<ReturnType<typeof searchEvent>>
   );
 
-  const { supabase } = useNext Nexus PlatformSupabase();
+  const { supabase } = useNextNexusSupabase();
 
   async function search(name: string) {
     setSearchRes(await searchEvent(supabase));

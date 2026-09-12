@@ -79,7 +79,7 @@ function normalizeFields(arr) {
 }
 
 async function write(application) {
-  const client = new MongoClient(getEnv().Next Nexus Platform.MongoDB.URL);
+  const client = new MongoClient(getEnv().NextNexus.MongoDB.URL);
 
   try {
     const db = client.db('nextnexus-f24');

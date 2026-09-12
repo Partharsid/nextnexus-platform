@@ -23,12 +23,12 @@ import { deleteCookie, getCookie, setCookie } from 'cookies-next';
 import { getEnv } from '@nextnexus/env';
 
 @injectable()
-export class Next Nexus PlatformSupabaseClient {
+export class NextNexusSupabaseClient {
   private client: SupabaseClient;
 
   constructor() {
-    const apiUrl = getEnv().Next Nexus Platform.Supabase.apiUrl;
-    const anonKey = getEnv().Next Nexus Platform.Supabase.anonKey;
+    const apiUrl = getEnv().NextNexus.Supabase.apiUrl;
+    const anonKey = getEnv().NextNexus.Supabase.anonKey;
 
     if (!apiUrl) {
       console.error(
@@ -42,8 +42,8 @@ export class Next Nexus PlatformSupabaseClient {
       );
     }
     this.client = createClient(
-      getEnv().Next Nexus Platform.Supabase.apiUrl ?? 'http://placeholder',
-      getEnv().Next Nexus Platform.Supabase.anonKey ?? 'placeholder'
+      getEnv().NextNexus.Supabase.apiUrl ?? 'http://placeholder',
+      getEnv().NextNexus.Supabase.anonKey ?? 'placeholder'
     );
   }
 
@@ -54,8 +54,8 @@ export class Next Nexus PlatformSupabaseClient {
   setOptions({ useServiceKey }: { useServiceKey: boolean }) {
     if (useServiceKey) {
       this.client = createClient(
-        getEnv().Next Nexus Platform.Supabase.apiUrl,
-        getEnv().Next Nexus Platform.Supabase.serviceKey
+        getEnv().NextNexus.Supabase.apiUrl,
+        getEnv().NextNexus.Supabase.serviceKey
       );
     }
   }
@@ -90,7 +90,7 @@ export class Next Nexus PlatformSupabaseClient {
     });
     const data = res.data;
     if (data.user) {
-      Next Nexus PlatformSupabaseClient.setTokenCookieClientSide(
+      NextNexusSupabaseClient.setTokenCookieClientSide(
         data.session.access_token,
         data.session.refresh_token
       );
@@ -360,17 +360,17 @@ export class Next Nexus PlatformSupabaseClient {
    */
   async setSessionClientSide(
     access_token: string = getCookie(
-      getEnv().Next Nexus Platform.Cookies.accessTokenName
+      getEnv().NextNexus.Cookies.accessTokenName
     ) as string,
     refresh_token: string = getCookie(
-      getEnv().Next Nexus Platform.Cookies.refreshTokenName
+      getEnv().NextNexus.Cookies.refreshTokenName
     ) as string
   ): Promise<Session | null> {
     // No valid session, proceed to set session
     const authRes = await this.verifyToken(access_token, refresh_token);
     if ('session' in authRes.data && authRes.data.session != null) {
       // Update cookies in case session was refreshed
-      Next Nexus PlatformSupabaseClient.setTokenCookieClientSide(
+      NextNexusSupabaseClient.setTokenCookieClientSide(
         authRes.data.session.access_token,
         authRes.data.session.refresh_token
       );

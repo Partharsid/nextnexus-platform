@@ -59,7 +59,7 @@ function EventList(props: EventListProps) {
     unpinEvent(
       user.id,
       id,
-      getCookie(getEnv().Next Nexus Platform.Cookies.accessTokenName)?.toString()
+      getCookie(getEnv().NextNexus.Cookies.accessTokenName)?.toString()
     );
 
     const newItems = items.flat();

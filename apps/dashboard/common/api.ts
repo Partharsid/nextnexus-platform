@@ -3,7 +3,7 @@ import { HackformSubmission } from '@nextnexus/types';
 import axios from 'axios';
 import { LocalAPIResponses } from './types';
 import mime from 'mime-types';
-import { Next Nexus PlatformSupabaseClient } from '@nextnexus/nextnexus-supabase-client';
+import { NextNexusSupabaseClient } from '@nextnexus/nextnexus-supabase-client';
 import { getCookie } from 'cookies-next';
 import { getEnv } from '@nextnexus/env';
 
@@ -27,7 +27,7 @@ export default class APIService {
     file: File,
     key: string,
     hackerId: string,
-    supabase: Next Nexus PlatformSupabaseClient
+    supabase: NextNexusSupabaseClient
   ) {
     // prelim check if hacker has already submitted
     const {
@@ -61,11 +61,11 @@ export default class APIService {
   static async submitHackform(
     hackerId: string,
     submission: HackformSubmission,
-    supabase: Next Nexus PlatformSupabaseClient
+    supabase: NextNexusSupabaseClient
   ) {
     const env = getEnv();
     const user = await supabase.getUserProfile(
-      getCookie(env.Next Nexus Platform.Cookies.accessTokenName) as string
+      getCookie(env.NextNexus.Cookies.accessTokenName) as string
     );
     if (user.application_status === 3 || user.app_id !== null) {
       return null;

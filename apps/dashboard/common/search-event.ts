@@ -1,7 +1,7 @@
-import { Next Nexus PlatformSupabaseClient } from '@nextnexus/nextnexus-supabase-client';
+import { NextNexusSupabaseClient } from '@nextnexus/nextnexus-supabase-client';
 
 export default async function searchEvent(
-  supabase: Next Nexus PlatformSupabaseClient
+  supabase: NextNexusSupabaseClient
 ): Promise<any[]> {
   const eventnameMatches = await supabase.getClient().from('events').select();
 

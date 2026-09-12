@@ -146,13 +146,13 @@ const faqQuestionsAndAnswersData: {
   {
     titleText: 'How do I register?',
     disclosedText:
-      'You can find the application on Next Nexus Platform, our hacker portal.',
+      'You can find the application on NextNexus, our hacker portal.',
     color: Colors2023.YELLOW.STANDARD,
   },
   {
     titleText: 'I’m a VIT-AP student — do I need to apply?',
     disclosedText:
-      'Yes! Please fill out an application on Next Nexus Platform, our hacker portal.',
+      'Yes! Please fill out an application on NextNexus, our hacker portal.',
     color: Colors2023.PINK.STANDARD,
   },
   {
@@ -163,7 +163,7 @@ const faqQuestionsAndAnswersData: {
   {
     titleText: 'Can I volunteer to judge or mentor?',
     disclosedText:
-      'Of course! Please fill out an application on Next Nexus Platform. Reach out to experience@nextnexus.com if you’d like to join us as either a judge or a mentor, and we’ll get back to you promptly with more details.',
+      'Of course! Please fill out an application on NextNexus. Reach out to experience@nextnexus.com if you’d like to join us as either a judge or a mentor, and we’ll get back to you promptly with more details.',
     color: Colors2023.PURPLE.STANDARD,
   },
   {

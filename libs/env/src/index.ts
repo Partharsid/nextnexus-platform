@@ -13,7 +13,7 @@ const DefaultRole = (() => {
 
 export const getEnv = () => {
   return {
-    Next Nexus Platform: {
+    NextNexus: {
       Battlepass: {
         ApiUrl: process.env.NEXT_PUBLIC_HIBISCUS_BATTLEPASS_API_URL,
       },

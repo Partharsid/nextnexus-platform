@@ -5,15 +5,15 @@ import React, {
   useEffect,
   useState,
 } from 'react';
-import { Next Nexus PlatformSupabaseClient } from '@nextnexus/nextnexus-supabase-client';
+import { NextNexusSupabaseClient } from '@nextnexus/nextnexus-supabase-client';
 import { logout } from '@nextnexus/sso-client';
 import { container } from 'tsyringe';
 
 let supabase = null;
 
-function getSupabase(): Next Nexus PlatformSupabaseClient {
+function getSupabase(): NextNexusSupabaseClient {
   if (supabase == null) {
-    supabase = container.resolve(Next Nexus PlatformSupabaseClient);
+    supabase = container.resolve(NextNexusSupabaseClient);
   }
 
   return supabase;
@@ -37,7 +37,7 @@ export function SupabaseContextProvider(props: PropsWithChildren) {
       supabase.getClient().auth.onAuthStateChange((event, session) => {
         if (event == 'TOKEN_REFRESHED' || event == 'SIGNED_IN') {
           if (session != null) {
-            Next Nexus PlatformSupabaseClient.setTokenCookieClientSide(
+            NextNexusSupabaseClient.setTokenCookieClientSide(
               session.access_token,
               session.refresh_token
             );
@@ -65,7 +65,7 @@ export function SupabaseContextProvider(props: PropsWithChildren) {
   );
 }
 
-export function useNext Nexus PlatformSupabase() {
+export function useNextNexusSupabase() {
   const { supabase } = useContext(SupabaseContext);
 
   return { supabase };

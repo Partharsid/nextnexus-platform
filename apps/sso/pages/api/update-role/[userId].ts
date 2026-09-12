@@ -1,4 +1,4 @@
-import { Next Nexus PlatformSupabaseClient } from '@nextnexus/nextnexus-supabase-client';
+import { NextNexusSupabaseClient } from '@nextnexus/nextnexus-supabase-client';
 import { NextNexusRole } from '@nextnexus/types';
 import { NextApiHandler } from 'next';
 import { container } from 'tsyringe';
@@ -8,7 +8,7 @@ const handler: NextApiHandler = async (req, res) => {
   const userIdString = userId.toString();
 
   if (req.method === 'PUT') {
-    const supabase = container.resolve(Next Nexus PlatformSupabaseClient);
+    const supabase = container.resolve(NextNexusSupabaseClient);
     supabase.setOptions({ useServiceKey: true });
 
     const resEmail = await supabase

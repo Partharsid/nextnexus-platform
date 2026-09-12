@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import useNextNexusUser from '../../hooks/use-nextnexus-user/use-nextnexus-user';
 import { Attendee } from 'apps/dashboard/common/mock-sponsor';
 import { useRouter } from 'next/router';
-import { useNext Nexus PlatformSupabase } from '@nextnexus/nextnexus-supabase-context';
+import { useNextNexusSupabase } from '@nextnexus/nextnexus-supabase-context';
 import { SponsorServiceAPI } from 'apps/dashboard/common/api';
 import { FaBookmark, FaChevronUp, FaRegBookmark } from 'react-icons/fa6';
 import { FiSearch } from 'react-icons/fi';
@@ -17,7 +17,7 @@ type SortKey = keyof Pick<
 
 export default function Index() {
   const router = useRouter();
-  const supabase = useNext Nexus PlatformSupabase().supabase.getClient();
+  const supabase = useNextNexusSupabase().supabase.getClient();
 
   const { user } = useNextNexusUser();
   const [COMPANY_ID, setCompanyId] = useState(null);

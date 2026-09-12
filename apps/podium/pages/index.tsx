@@ -189,7 +189,7 @@ const Index = () => {
                     activeProject.verticalId,
                     user.id,
                     newIndex + 1,
-                    getCookie(env.Next Nexus Platform.Cookies.accessTokenName)?.toString()
+                    getCookie(env.NextNexus.Cookies.accessTokenName)?.toString()
                   );
 
                   return arrayMove(updatedRanking, oldIndex, newIndex);
@@ -213,7 +213,7 @@ const Index = () => {
                     activeProject.verticalId,
                     user.id,
                     newIndex + 1,
-                    getCookie(env.Next Nexus Platform.Cookies.accessTokenName)?.toString()
+                    getCookie(env.NextNexus.Cookies.accessTokenName)?.toString()
                   );
 
                   return arrayMove(prev, oldIndex, newIndex);
@@ -227,7 +227,7 @@ const Index = () => {
                     activeProject.verticalId,
                     user.id,
                     newIndex + 1,
-                    getCookie(env.Next Nexus Platform.Cookies.accessTokenName)?.toString()
+                    getCookie(env.NextNexus.Cookies.accessTokenName)?.toString()
                   );
 
                   return prev;
@@ -259,7 +259,7 @@ const Index = () => {
               activeProject.verticalId,
               user.id,
               index + 1,
-              getCookie(env.Next Nexus Platform.Cookies.accessTokenName)?.toString()
+              getCookie(env.NextNexus.Cookies.accessTokenName)?.toString()
             );
 
             setRankedProjects((prev) => [...prev, activeProject]);
@@ -287,7 +287,7 @@ const Index = () => {
               activeProject.projectId,
               activeProject.verticalId,
               user.id,
-              getCookie(env.Next Nexus Platform.Cookies.accessTokenName)?.toString()
+              getCookie(env.NextNexus.Cookies.accessTokenName)?.toString()
             );
 
             setRankedProjects((prev) =>
@@ -313,7 +313,7 @@ const Index = () => {
   }
 
   if (![NextNexusRole.JUDGE, NextNexusRole.ADMIN].includes(user?.role)) {
-    window.location.assign(env.Next Nexus Platform.AppURL.portal);
+    window.location.assign(env.NextNexus.AppURL.portal);
     return <></>;
   }
 
@@ -337,7 +337,7 @@ const Index = () => {
       {isDragging && <OnHoldDroppable type={'OnHoldAdd'} />}
 
       <header className={`${styles.header} ${styles.flexCenter}`}>
-        <img src="logo_word.png" alt="Next Nexus Platform Next Nexus Logo" />
+        <img src="logo_word.png" alt="NextNexus Next Nexus Logo" />
         {/* <BiSearch
           color="#FFFFFF"
           size="30px"

@@ -1,9 +1,9 @@
-import { Next Nexus PlatformSupabaseClient } from '@nextnexus/nextnexus-supabase-client';
+import { NextNexusSupabaseClient } from '@nextnexus/nextnexus-supabase-client';
 import { injectable } from 'tsyringe';
 
 @injectable()
 export class LinkRepository {
-  constructor(private readonly client: Next Nexus PlatformSupabaseClient) {}
+  constructor(private readonly client: NextNexusSupabaseClient) {}
 
   /**
    * Update or inserts a path-URL pair

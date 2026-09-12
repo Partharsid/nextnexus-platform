@@ -1,12 +1,12 @@
 import { injectable } from 'tsyringe';
-import { Next Nexus PlatformSupabaseClient } from '@nextnexus/nextnexus-supabase-client';
+import { NextNexusSupabaseClient } from '@nextnexus/nextnexus-supabase-client';
 import { SupabaseClient } from '@supabase/supabase-js';
 
 @injectable()
 export class InviteRepository {
   private client: SupabaseClient;
   private tableName = 'invitations';
-  constructor(private readonly hbc: Next Nexus PlatformSupabaseClient) {
+  constructor(private readonly hbc: NextNexusSupabaseClient) {
     hbc.setOptions({ useServiceKey: true });
     this.client = hbc.getClient();
   }

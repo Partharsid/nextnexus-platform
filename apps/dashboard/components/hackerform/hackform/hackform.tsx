@@ -7,7 +7,7 @@ import HackformEnding from '../hackform-end/hackform-end';
 import { useHackform } from '../../../hooks/use-hackform/use-hackform';
 import { getCookie } from 'cookies-next';
 import { getEnv } from '@nextnexus/env';
-import { useNext Nexus PlatformSupabase } from '@nextnexus/nextnexus-supabase-context';
+import { useNextNexusSupabase } from '@nextnexus/nextnexus-supabase-context';
 
 /* eslint-disable-next-line */
 export interface HackerformProps {
@@ -16,14 +16,14 @@ export interface HackerformProps {
 
 export function Hackerform({ formMetadata }: HackerformProps) {
   const { currentQuestionIndex: cqi, ...hackformUtils } = useHackform();
-  const { supabase } = useNext Nexus PlatformSupabase();
+  const { supabase } = useNextNexusSupabase();
 
   const handleClick = async () => {
     hackformUtils.goNextQuestion();
 
     const client = supabase.getClient();
     const accessToken = getCookie(
-      getEnv().Next Nexus Platform.Cookies.accessTokenName
+      getEnv().NextNexus.Cookies.accessTokenName
     ).toString();
     const user = await supabase.getUserProfile(accessToken);
     await client

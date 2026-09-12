@@ -1,7 +1,7 @@
 import { getEnv } from '@nextnexus/env';
 
 const {
-  Next Nexus Platform: { AWS },
+  NextNexus: { AWS },
 } = getEnv();
 
 export const credentials = {

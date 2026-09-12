@@ -10,13 +10,13 @@ import router from 'next/router';
 import { ScrollableListBox } from '../../../components/identity-portal/scrollable-list-box/scrollable-list-box';
 import { useEffect, useState } from 'react';
 import searchEvent from '../../../common/search-event';
-import { useNext Nexus PlatformSupabase } from '@nextnexus/nextnexus-supabase-context';
+import { useNextNexusSupabase } from '@nextnexus/nextnexus-supabase-context';
 import { SearchUserBox } from 'apps/dashboard/components/identity-portal/search-user-box/search-user-box';
 import Select from 'react-select';
 
 export function Index() {
   const { user: authUser } = useNextNexusUser();
-  const { supabase } = useNext Nexus PlatformSupabase();
+  const { supabase } = useNextNexusSupabase();
 
   //search for all events in supabase table
   const [searchRes, setSearchRes] = useState(null);

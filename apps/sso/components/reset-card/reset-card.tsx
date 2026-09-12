@@ -2,7 +2,7 @@ import { useState } from 'react';
 import styled from 'styled-components';
 import { H3, Text } from '@nextnexus/ui';
 import { useRouter } from 'next/router';
-import { useNext Nexus PlatformSupabase } from '@nextnexus/nextnexus-supabase-context';
+import { useNextNexusSupabase } from '@nextnexus/nextnexus-supabase-context';
 import { Colors2023 } from '@nextnexus/styles';
 import { Button, ColorSpanBold } from '@nextnexus/ui-kit-2023';
 import { StyledAuthCard } from '../auth-components/styled-card';
@@ -18,7 +18,7 @@ export function ResetCard(props: ResetCardProps) {
   const router = useRouter();
   const [hideErrorMessage, setHideErrorMessage] = useState(true);
   const [errorMessage, setErrorMessage] = useState('');
-  const { supabase } = useNext Nexus PlatformSupabase();
+  const { supabase } = useNextNexusSupabase();
 
   async function handleSubmit(event) {
     event.preventDefault();

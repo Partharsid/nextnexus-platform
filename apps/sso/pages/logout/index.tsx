@@ -3,10 +3,10 @@ import { TrademarkColors } from '@nextnexus/styles';
 import Head from 'next/head';
 import { useEffect } from 'react';
 import { getWebTitle } from '@nextnexus/metadata';
-import { useNext Nexus PlatformSupabase } from '@nextnexus/nextnexus-supabase-context';
+import { useNextNexusSupabase } from '@nextnexus/nextnexus-supabase-context';
 
 export function Index() {
-  const { supabase } = useNext Nexus PlatformSupabase();
+  const { supabase } = useNextNexusSupabase();
 
   useEffect(() => {
     async function logout() {

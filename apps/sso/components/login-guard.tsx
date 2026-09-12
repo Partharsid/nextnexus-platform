@@ -1,10 +1,10 @@
 import { useEffect, PropsWithChildren, useState } from 'react';
-import { Next Nexus PlatformSupabaseClient } from '@nextnexus/nextnexus-supabase-client';
+import { NextNexusSupabaseClient } from '@nextnexus/nextnexus-supabase-client';
 import * as SSOClient from '@nextnexus/sso-client';
 import { getCookie } from 'cookies-next';
 import { getEnv } from '@nextnexus/env';
 import { Session } from '@supabase/supabase-js';
-import { useNext Nexus PlatformSupabase } from '@nextnexus/nextnexus-supabase-context';
+import { useNextNexusSupabase } from '@nextnexus/nextnexus-supabase-context';
 
 interface LoginGuardProps extends PropsWithChildren {
   callback: string;
@@ -12,16 +12,16 @@ interface LoginGuardProps extends PropsWithChildren {
 
 export function LoginGuard({ callback, children }: LoginGuardProps) {
   const [authorized, setAuthorized] = useState(false);
-  const { supabase } = useNext Nexus PlatformSupabase();
+  const { supabase } = useNextNexusSupabase();
 
   useEffect(() => {
     async function fetchData() {
       if (callback != null) {
         const access_token = getCookie(
-          getEnv().Next Nexus Platform.Cookies.accessTokenName
+          getEnv().NextNexus.Cookies.accessTokenName
         );
         const refresh_token = getCookie(
-          getEnv().Next Nexus Platform.Cookies.refreshTokenName
+          getEnv().NextNexus.Cookies.refreshTokenName
         );
         let session: Session | null = null;
         if (access_token != null && refresh_token != null) {
@@ -32,7 +32,7 @@ export function LoginGuard({ callback, children }: LoginGuardProps) {
           session = data.session;
         }
         if (session != null) {
-          Next Nexus PlatformSupabaseClient.setTokenCookieClientSide(
+          NextNexusSupabaseClient.setTokenCookieClientSide(
             session.access_token,
             session.refresh_token
           );

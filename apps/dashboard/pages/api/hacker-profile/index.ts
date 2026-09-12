@@ -1,7 +1,7 @@
 import 'reflect-metadata';
 import { NextApiHandler } from 'next';
 import { container } from 'tsyringe';
-import { Next Nexus PlatformSupabaseClient } from '@nextnexus/nextnexus-supabase-client';
+import { NextNexusSupabaseClient } from '@nextnexus/nextnexus-supabase-client';
 import {
   getTokensFromNextRequest,
   rateLimitHandler,
@@ -11,7 +11,7 @@ const handler: NextApiHandler = async (req, res) => {
   if (req.method !== 'GET') {
     return res.status(405).send('Method not allowed');
   }
-  const nextnexus = container.resolve(Next Nexus PlatformSupabaseClient);
+  const nextnexus = container.resolve(NextNexusSupabaseClient);
   nextnexus.setOptions({ useServiceKey: true });
 
   const { accessToken } = getTokensFromNextRequest(req);

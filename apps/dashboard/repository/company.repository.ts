@@ -1,4 +1,4 @@
-import { Next Nexus PlatformSupabaseClient } from '@nextnexus/nextnexus-supabase-client';
+import { NextNexusSupabaseClient } from '@nextnexus/nextnexus-supabase-client';
 import { SupabaseClient } from '@supabase/supabase-js';
 import { injectable } from 'tsyringe';
 
@@ -11,7 +11,7 @@ export class CompanyRepository {
   private client: SupabaseClient;
   private readonly savedParticipantsTableName: string =
     'companies_saved_user_profiles';
-  constructor(private readonly hbc: Next Nexus PlatformSupabaseClient) {
+  constructor(private readonly hbc: NextNexusSupabaseClient) {
     hbc.setOptions({ useServiceKey: true });
     this.client = hbc.getClient();
   }

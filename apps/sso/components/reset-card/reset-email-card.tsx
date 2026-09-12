@@ -6,7 +6,7 @@ import { useState } from 'react';
 import { H3, Text } from '@nextnexus/ui';
 import { Colors2023 } from '@nextnexus/styles';
 import GrayLink from '../gray-link/gray-link';
-import { useNext Nexus PlatformSupabase } from '@nextnexus/nextnexus-supabase-context';
+import { useNextNexusSupabase } from '@nextnexus/nextnexus-supabase-context';
 import { Button, ColorSpanBold } from '@nextnexus/ui-kit-2023';
 import { StyledAuthCard } from '../auth-components/styled-card';
 import { Input } from '../auth-components/styled-input';
@@ -19,7 +19,7 @@ export interface ResetCardProps {}
 
 export function ResetEmailCard(props: ResetCardProps) {
   const [hideSuccessMessage, setHideSuccessMessage] = useState(false);
-  const { supabase } = useNext Nexus PlatformSupabase();
+  const { supabase } = useNextNexusSupabase();
 
   const router = useRouter();
 

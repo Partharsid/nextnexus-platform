@@ -134,7 +134,7 @@ function ThemelessLayout({ children }: ThemelessLayoutProps) {
                 width="18"
                 height="18"
                 src="/log-out.svg"
-                alt="Log out of Next Nexus Platform"
+                alt="Log out of NextNexus"
               />
             </LogoutButton>
           </RightUtilityContainer>

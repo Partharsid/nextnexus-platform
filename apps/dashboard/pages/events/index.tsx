@@ -90,7 +90,7 @@ function EventPage() {
     async function fetchEvents() {
       try {
         const events = await getAllEvents(
-          getCookie(getEnv().Next Nexus Platform.Cookies.accessTokenName)?.toString()
+          getCookie(getEnv().NextNexus.Cookies.accessTokenName)?.toString()
         );
         setEvents(events);
 
@@ -122,7 +122,7 @@ function EventPage() {
       try {
         const pinnedEvents = await getPinnedEvents(
           user.id,
-          getCookie(getEnv().Next Nexus Platform.Cookies.accessTokenName)?.toString()
+          getCookie(getEnv().NextNexus.Cookies.accessTokenName)?.toString()
         );
         setPinnedEvents(pinnedEvents);
       } catch (e) {

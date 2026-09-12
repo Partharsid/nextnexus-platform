@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { Next Nexus PlatformSupabaseClient } from '@nextnexus/nextnexus-supabase-client';
+import { NextNexusSupabaseClient } from '@nextnexus/nextnexus-supabase-client';
 import { SupabaseClient } from '@supabase/supabase-js';
 import { injectable } from 'tsyringe';
 
@@ -7,7 +7,7 @@ import { injectable } from 'tsyringe';
 export class AttendeeRepository {
   private client: SupabaseClient;
 
-  constructor(private readonly hbc: Next Nexus PlatformSupabaseClient) {
+  constructor(private readonly hbc: NextNexusSupabaseClient) {
     hbc.setOptions({ useServiceKey: true });
     this.client = hbc.getClient();
   }

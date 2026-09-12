@@ -73,8 +73,8 @@ async function updateDb(
   applicationId: string
 ): Promise<PostgrestSingleResponse<any[]>> {
   const supabase = createClient(
-    getEnv().Next Nexus Platform.Supabase.apiUrl,
-    getEnv().Next Nexus Platform.Supabase.serviceKey
+    getEnv().NextNexus.Supabase.apiUrl,
+    getEnv().NextNexus.Supabase.serviceKey
   );
 
   const res = await supabase

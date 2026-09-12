@@ -1,5 +1,5 @@
 import { faker } from '@faker-js/faker';
-import { Next Nexus PlatformSupabaseClient } from '@nextnexus/nextnexus-supabase-client';
+import { NextNexusSupabaseClient } from '@nextnexus/nextnexus-supabase-client';
 import { SupabaseClient } from '@supabase/supabase-js';
 import { BonusPointsStatus } from './types';
 import { container } from 'tsyringe';
@@ -69,7 +69,7 @@ export interface BattlepassAPIInterface {
 
 export class BattlepassAPI implements BattlepassAPIInterface {
   private readonly client: SupabaseClient;
-  constructor(private mock: boolean, hbc: Next Nexus PlatformSupabaseClient) {
+  constructor(private mock: boolean, hbc: NextNexusSupabaseClient) {
     this.client = hbc.getClient();
   }
 

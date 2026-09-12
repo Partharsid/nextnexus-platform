@@ -11,12 +11,12 @@ import styled from 'styled-components';
 import { Text } from '@nextnexus/ui';
 import { Colors2023 } from '@nextnexus/styles';
 import { ImCross } from 'react-icons/im';
-import { useNext Nexus PlatformSupabase } from '@nextnexus/nextnexus-supabase-context';
+import { useNextNexusSupabase } from '@nextnexus/nextnexus-supabase-context';
 
 export const FileQuestion = () => {
   const { user } = useNextNexusUser();
   const { currentQuestionIndex: cqi, ...hackformUtils } = useHackform();
-  const { supabase } = useNext Nexus PlatformSupabase();
+  const { supabase } = useNextNexusSupabase();
   const lastInput = hackformUtils.getCurrentResponse()?.input;
   const [uploaded, setUploaded] = useState<File | null>(null);
   const [response, setResponse] = useState<{

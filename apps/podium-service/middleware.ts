@@ -12,8 +12,8 @@ export async function middleware(req: NextRequest) {
     return NextResponse.next();
   }
 
-  const authServiceUrl = getEnv().Next Nexus Platform.Podium.ApiUrl;
-  const masterToken = getEnv().Next Nexus Platform.Podium.ApiMasterToken;
+  const authServiceUrl = getEnv().NextNexus.Podium.ApiUrl;
+  const masterToken = getEnv().NextNexus.Podium.ApiMasterToken;
 
   const headers = req.headers;
   let accessToken = headers.get('Authorization');

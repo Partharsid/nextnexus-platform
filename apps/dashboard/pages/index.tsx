@@ -13,7 +13,7 @@ import { removeTabRoute } from '../store/menu-slice';
 import RSVPClosedPlaceholder from '../components/hacker-portal/rsvp-closed-placeholder';
 import { get } from '@vercel/edge-config';
 import { useRouter } from 'next/router';
-import { useNext Nexus PlatformSupabase } from '@nextnexus/nextnexus-supabase-context';
+import { useNextNexusSupabase } from '@nextnexus/nextnexus-supabase-context';
 
 const RSVP_PERIOD = 4 * 24 * 60 * 60 * 1000; // 4 days in milliseconds
 
@@ -25,7 +25,7 @@ interface ServerSideProps {
 
 export function Index({ appsOpen, waitlistOpen }: ServerSideProps) {
   const dispatch = useAppDispatch();
-  const { supabase } = useNext Nexus PlatformSupabase();
+  const { supabase } = useNextNexusSupabase();
   const { user } = useNextNexusUser();
 
   const [hackerPortalOpen, setHackerPortalOpen] = useState(null);

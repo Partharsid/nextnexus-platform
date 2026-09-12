@@ -6,7 +6,7 @@ import rateLimit from 'express-rate-limit';
 import { getEnv } from '@nextnexus/env';
 import { ApplicationStatus } from '@nextnexus/types';
 import { HACKER_POSTAPP_STATUSES, MLH_MAJORS_OPTIONS_LIST } from './constants';
-import { Next Nexus PlatformSupabaseClient } from '@nextnexus/nextnexus-supabase-client';
+import { NextNexusSupabaseClient } from '@nextnexus/nextnexus-supabase-client';
 import { container } from 'tsyringe';
 
 export const getWordCount = (text: string) =>
@@ -106,8 +106,8 @@ export const rateLimitHandler = async (
 };
 
 export const getTokensFromNextRequest = (req: NextApiRequest) => {
-  const accessToken = req.cookies[getEnv().Next Nexus Platform.Cookies.accessTokenName];
-  const refreshToken = req.cookies[getEnv().Next Nexus Platform.Cookies.refreshTokenName];
+  const accessToken = req.cookies[getEnv().NextNexus.Cookies.accessTokenName];
+  const refreshToken = req.cookies[getEnv().NextNexus.Cookies.refreshTokenName];
   return { refreshToken, accessToken };
 };
 
@@ -118,7 +118,7 @@ export const isHackerPostAppStatus = (status: ApplicationStatus) => {
 export const getMLHMajors = () => MLH_MAJORS_OPTIONS_LIST;
 
 export async function createSignedResumeUrl(resumeFilePath: string) {
-  const repo = container.resolve(Next Nexus PlatformSupabaseClient);
+  const repo = container.resolve(NextNexusSupabaseClient);
   repo.setOptions({ useServiceKey: true });
   const { data, error } = await repo
     .getClient()

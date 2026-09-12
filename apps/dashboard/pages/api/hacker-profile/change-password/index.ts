@@ -1,4 +1,4 @@
-import { Next Nexus PlatformSupabaseClient } from '@nextnexus/nextnexus-supabase-client';
+import { NextNexusSupabaseClient } from '@nextnexus/nextnexus-supabase-client';
 import { NextApiHandler } from 'next';
 import { container } from 'tsyringe';
 
@@ -6,7 +6,7 @@ const handler: NextApiHandler = async (req, res) => {
   const { password } = req.body;
 
   if (req.method === 'PUT') {
-    const supabase = container.resolve(Next Nexus PlatformSupabaseClient);
+    const supabase = container.resolve(NextNexusSupabaseClient);
     supabase.setOptions({ useServiceKey: true });
 
     const responseUpdatePassword = await supabase.updatePassword(password);

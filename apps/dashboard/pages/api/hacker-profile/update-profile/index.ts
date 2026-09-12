@@ -1,11 +1,11 @@
-import { Next Nexus PlatformSupabaseClient } from '@nextnexus/nextnexus-supabase-client';
+import { NextNexusSupabaseClient } from '@nextnexus/nextnexus-supabase-client';
 import { NextApiHandler } from 'next';
 import { container } from 'tsyringe';
 import { getTokensFromNextRequest } from '../../../../common/utils';
 
 const handler: NextApiHandler = async (req, res) => {
   if (req.method == 'PUT') {
-    const nextnexus = container.resolve(Next Nexus PlatformSupabaseClient);
+    const nextnexus = container.resolve(NextNexusSupabaseClient);
     nextnexus.setOptions({ useServiceKey: true });
 
     const { accessToken } = getTokensFromNextRequest(req);

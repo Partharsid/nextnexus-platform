@@ -1,5 +1,5 @@
 import { injectable } from 'tsyringe';
-import { Next Nexus PlatformSupabaseClient } from '@nextnexus/nextnexus-supabase-client';
+import { NextNexusSupabaseClient } from '@nextnexus/nextnexus-supabase-client';
 import { SESClient, SendTemplatedEmailCommand } from '@aws-sdk/client-ses';
 import { getEnv } from '@nextnexus/env';
 import { SupabaseClient } from '@supabase/supabase-js';
@@ -10,13 +10,13 @@ export class DashboardRepository {
   private static readonly env = getEnv();
   private static readonly ses = new SESClient({
     credentials: {
-      accessKeyId: DashboardRepository.env.Next Nexus Platform.AWS.accessKeyID,
-      secretAccessKey: DashboardRepository.env.Next Nexus Platform.AWS.secretAccessKey,
+      accessKeyId: DashboardRepository.env.NextNexus.AWS.accessKeyID,
+      secretAccessKey: DashboardRepository.env.NextNexus.AWS.secretAccessKey,
     },
-    region: DashboardRepository.env.Next Nexus Platform.AWS.region,
+    region: DashboardRepository.env.NextNexus.AWS.region,
   });
 
-  constructor(private readonly hbc: Next Nexus PlatformSupabaseClient) {
+  constructor(private readonly hbc: NextNexusSupabaseClient) {
     hbc.setOptions({ useServiceKey: true });
     this.client = hbc.getClient();
   }
@@ -290,10 +290,10 @@ export class DashboardRepository {
   ) {
     const TEMPLATE_NAME = 'InviteTemplate';
     const acceptInviteLink =
-      getEnv().Next Nexus Platform.AppURL.portal +
+      getEnv().NextNexus.AppURL.portal +
       `/invite/accept?inviteId=${invitationId}`;
     const rejectInviteLink =
-      getEnv().Next Nexus Platform.AppURL.portal +
+      getEnv().NextNexus.AppURL.portal +
       `/invite/reject?inviteId=${invitationId}`;
 
     const createTemplateEmail = (templateName: string) => {

@@ -4,11 +4,11 @@ import { Colors2023 } from '@nextnexus/styles';
 import OTPInput from '../otp-input/otp-input';
 import { useState } from 'react';
 import { useRouter } from 'next/router';
-import { Next Nexus PlatformSupabaseClient } from '@nextnexus/nextnexus-supabase-client';
+import { NextNexusSupabaseClient } from '@nextnexus/nextnexus-supabase-client';
 import Image from 'next/image';
 import { MutatingDots } from 'react-loader-spinner';
 import { Button } from '@nextnexus/ui-kit-2023';
-import { useNext Nexus PlatformSupabase } from '@nextnexus/nextnexus-supabase-context';
+import { useNextNexusSupabase } from '@nextnexus/nextnexus-supabase-context';
 import axios from 'axios';
 import { StyledAuthCard } from '../auth-components/styled-card';
 
@@ -24,7 +24,7 @@ const updateRole = async (userId: string) => {
 
 export function VerifyCard() {
   const router = useRouter();
-  const { supabase } = useNext Nexus PlatformSupabase();
+  const { supabase } = useNextNexusSupabase();
   const [verifyState, setVerifyState] = useState('');
   const [hideErrorMessage, setHideErrorMessage] = useState(false);
   const [code, setCode] = useState('');
@@ -50,7 +50,7 @@ export function VerifyCard() {
 
       await updateRole(data.user.id);
 
-      Next Nexus PlatformSupabaseClient.setTokenCookieClientSide(
+      NextNexusSupabaseClient.setTokenCookieClientSide(
         data.session.access_token,
         data.session.refresh_token
       );

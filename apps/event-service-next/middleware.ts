@@ -17,7 +17,7 @@ export async function middleware(request: NextRequest) {
   ) {
     return NextResponse.next();
   }
-  const masterToken = getEnv().Next Nexus Platform.Events.MasterToken;
+  const masterToken = getEnv().NextNexus.Events.MasterToken;
 
   const headers = request.headers;
   let accessToken = headers.get('Authorization');
@@ -47,8 +47,8 @@ export async function middleware(request: NextRequest) {
 
   // Authenticate user
   const supabase = createClient(
-    getEnv().Next Nexus Platform.Supabase.apiUrl,
-    getEnv().Next Nexus Platform.Supabase.serviceKey
+    getEnv().NextNexus.Supabase.apiUrl,
+    getEnv().NextNexus.Supabase.serviceKey
   );
   const user = await supabase.auth.getUser(accessToken);
   if (user.error != null) {

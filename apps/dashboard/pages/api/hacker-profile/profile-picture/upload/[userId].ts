@@ -10,7 +10,7 @@ import {
   getTokensFromNextRequest,
   rateLimitHandler,
 } from '../../../../../common/utils';
-import { Next Nexus PlatformSupabaseClient } from '@nextnexus/nextnexus-supabase-client';
+import { NextNexusSupabaseClient } from '@nextnexus/nextnexus-supabase-client';
 
 export const config = {
   api: {
@@ -26,7 +26,7 @@ const validateFormat = (file: formidable.File) => {
   );
 };
 
-const hbc = container.resolve(Next Nexus PlatformSupabaseClient);
+const hbc = container.resolve(NextNexusSupabaseClient);
 hbc.setOptions({ useServiceKey: true });
 
 const handler: NextApiHandler = async (req, res) => {

@@ -58,7 +58,7 @@ export async function getEvent(
   eventId: string,
   accessToken: string
 ): Promise<Event> {
-  const apiUrl = getEnv().Next Nexus Platform.Events.ApiUrl;
+  const apiUrl = getEnv().NextNexus.Events.ApiUrl;
 
   try {
     const res = await axios(`${apiUrl}/events/${eventId}`, {
@@ -79,7 +79,7 @@ export async function getEvent(
 }
 
 export async function getAllEvents(accessToken: string): Promise<Event[]> {
-  const apiUrl = getEnv().Next Nexus Platform.Events.ApiUrl;
+  const apiUrl = getEnv().NextNexus.Events.ApiUrl;
 
   // Display all events after Nov 7, 2024
   const startDate = new Date(2024, 10, 1).toISOString();
@@ -108,7 +108,7 @@ export async function getPinnedEvents(
   userId: string,
   accessToken: string
 ): Promise<Event[]> {
-  const apiUrl = getEnv().Next Nexus Platform.Events.ApiUrl;
+  const apiUrl = getEnv().NextNexus.Events.ApiUrl;
 
   try {
     const res = await axios(`${apiUrl}/pinned-events/${userId}`, {
@@ -135,7 +135,7 @@ export async function pinEvent(
   eventId: string,
   accessToken: string
 ): Promise<number> {
-  const apiUrl = getEnv().Next Nexus Platform.Events.ApiUrl;
+  const apiUrl = getEnv().NextNexus.Events.ApiUrl;
 
   try {
     const res = await axios(`${apiUrl}/pinned-events/${userId}`, {
@@ -161,7 +161,7 @@ export async function unpinEvent(
   eventId: string,
   accessToken: string
 ): Promise<number> {
-  const apiUrl = getEnv().Next Nexus Platform.Events.ApiUrl;
+  const apiUrl = getEnv().NextNexus.Events.ApiUrl;
 
   try {
     const res = await axios(`${apiUrl}/pinned-events/${userId}`, {
@@ -187,7 +187,7 @@ export async function updateEvent(
   props: Partial<Event>,
   accessToken: string
 ): Promise<Event> {
-  const apiUrl = getEnv().Next Nexus Platform.Events.ApiUrl;
+  const apiUrl = getEnv().NextNexus.Events.ApiUrl;
 
   try {
     const res = await axios(`${apiUrl}/events/${eventId}`, {

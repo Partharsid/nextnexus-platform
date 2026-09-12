@@ -3,7 +3,7 @@ import { middlewareHandler } from '@nextnexus/sso-client';
 import { NextRequest } from 'next/server';
 
 export async function middleware(request: NextRequest) {
-  return middlewareHandler(`${getEnv().Next Nexus Platform.AppURL.portal}/api/callback`)(
+  return middlewareHandler(`${getEnv().NextNexus.AppURL.portal}/api/callback`)(
     request
   );
 }

@@ -7,7 +7,7 @@ import Image from 'next/image';
 import styled from 'styled-components';
 import APIService from '../../../common/api';
 import useNextNexusUser from '../../../hooks/use-nextnexus-user/use-nextnexus-user';
-import { useNext Nexus PlatformSupabase } from '@nextnexus/nextnexus-supabase-context';
+import { useNextNexusSupabase } from '@nextnexus/nextnexus-supabase-context';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 import * as Sentry from '@sentry/browser';
@@ -22,7 +22,7 @@ export interface HackformEndingProps {
 export const HackformEnding = ({ formMetadata }: HackformEndingProps) => {
   const hackformUtils = useHackform();
   const { user, updateUser } = useNextNexusUser();
-  const { supabase } = useNext Nexus PlatformSupabase();
+  const { supabase } = useNextNexusSupabase();
   const router = useRouter();
   const [submitting, setSubmitting] = useState(false);
 

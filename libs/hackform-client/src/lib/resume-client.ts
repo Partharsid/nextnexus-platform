@@ -1,5 +1,5 @@
 import { injectable, container } from 'tsyringe';
-import { Next Nexus PlatformSupabaseClient } from '@nextnexus/nextnexus-supabase-client';
+import { NextNexusSupabaseClient } from '@nextnexus/nextnexus-supabase-client';
 import { StorageError } from '@supabase/storage-js';
 
 interface ResumeResponse {
@@ -9,11 +9,11 @@ interface ResumeResponse {
 
 @injectable()
 export class HackformResumeUploadClient {
-  private readonly supabaseClient: Next Nexus PlatformSupabaseClient;
+  private readonly supabaseClient: NextNexusSupabaseClient;
   private readonly bucket: string = 'resume';
 
   constructor() {
-    this.supabaseClient = container.resolve(Next Nexus PlatformSupabaseClient);
+    this.supabaseClient = container.resolve(NextNexusSupabaseClient);
   }
 
   /**

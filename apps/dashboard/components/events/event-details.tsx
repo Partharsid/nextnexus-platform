@@ -295,11 +295,11 @@ const pinEventHandler =
       await pinEvent(
         userId,
         eventId,
-        getCookie(getEnv().Next Nexus Platform.Cookies.accessTokenName)?.toString()
+        getCookie(getEnv().NextNexus.Cookies.accessTokenName)?.toString()
       );
       const pinned = await getPinnedEvents(
         userId,
-        getCookie(getEnv().Next Nexus Platform.Cookies.accessTokenName)?.toString()
+        getCookie(getEnv().NextNexus.Cookies.accessTokenName)?.toString()
       );
       setPinnedEvents(pinned);
     } catch (e) {
@@ -319,11 +319,11 @@ const unpinEventHandler =
       await unpinEvent(
         userId,
         eventId,
-        getCookie(getEnv().Next Nexus Platform.Cookies.accessTokenName)?.toString()
+        getCookie(getEnv().NextNexus.Cookies.accessTokenName)?.toString()
       );
       const pinned = await getPinnedEvents(
         userId,
-        getCookie(getEnv().Next Nexus Platform.Cookies.accessTokenName)?.toString()
+        getCookie(getEnv().NextNexus.Cookies.accessTokenName)?.toString()
       );
       setPinnedEvents(pinned);
     } catch (e) {
@@ -349,7 +349,7 @@ const saveHandler =
       await updateEvent(
         event.eventId,
         event,
-        getCookie(getEnv().Next Nexus Platform.Cookies.accessTokenName)?.toString()
+        getCookie(getEnv().NextNexus.Cookies.accessTokenName)?.toString()
       );
       setEditingEvent(null);
       refresh();

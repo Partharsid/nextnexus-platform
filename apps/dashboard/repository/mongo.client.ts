@@ -3,10 +3,10 @@ import { getEnv } from '@nextnexus/env';
 import { MongoClient } from 'mongodb';
 
 @singleton()
-export class Next Nexus PlatformMongoClient {
+export class NextNexusMongoClient {
   private readonly mongo: MongoClient;
   constructor() {
-    this.mongo = new MongoClient(getEnv().Next Nexus Platform.FeatureFlag.MongoURI);
+    this.mongo = new MongoClient(getEnv().NextNexus.FeatureFlag.MongoURI);
   }
 
   getClient() {

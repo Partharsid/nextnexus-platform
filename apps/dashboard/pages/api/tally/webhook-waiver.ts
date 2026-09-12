@@ -44,8 +44,8 @@ async function updateDb(
   email: string
 ): Promise<PostgrestSingleResponse<any[]>> {
   const supabase = createClient(
-    getEnv().Next Nexus Platform.Supabase.apiUrl,
-    getEnv().Next Nexus Platform.Supabase.serviceKey
+    getEnv().NextNexus.Supabase.apiUrl,
+    getEnv().NextNexus.Supabase.serviceKey
   );
 
   const resUP = await supabase

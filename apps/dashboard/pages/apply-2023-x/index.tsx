@@ -101,7 +101,7 @@ export function Index({ appsOpen, waitlistOpen }: ServerSideProps) {
 
   return (
     <MarginContainer>
-      <HackformTally tallyUrl={getEnv().Next Nexus Platform.Hackform.TallyApps2023XUrl} />
+      <HackformTally tallyUrl={getEnv().NextNexus.Hackform.TallyApps2023XUrl} />
     </MarginContainer>
   );
 }

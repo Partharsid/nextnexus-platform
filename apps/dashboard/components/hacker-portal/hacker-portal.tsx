@@ -11,7 +11,7 @@ import { ComingSoon } from './coming-soon';
 import { getColorsForRole } from '../../common/role.utils';
 import useNextNexusUser from '../../hooks/use-nextnexus-user/use-nextnexus-user';
 import { GrayBox } from '../gray-box/gray-box';
-import { useNext Nexus PlatformSupabase } from '@nextnexus/nextnexus-supabase-context';
+import { useNextNexusSupabase } from '@nextnexus/nextnexus-supabase-context';
 import DeclinedPlaceholder from './declined-placeholder';
 import { CongratsMessage } from './congrats-message';
 import { RejectionMessage } from './rejection-message';
@@ -34,7 +34,7 @@ export function HackerPortal({ isEventOpen, appsOpen }: HackerPortalProps) {
   // const closeModal = () => setModalOpen(false);
   // const userColors = getColorsForRole(user?.role ?? NextNexusRole.HACKER);
   // const [choice, setChoice] = useState<RSVPChoice | null>(null);
-  // const { supabase: hbc } = useNext Nexus PlatformSupabase();
+  // const { supabase: hbc } = useNextNexusSupabase();
   // const client = hbc.getClient();
   // const router = useRouter();
   // const WelcomeHeader = () => (
@@ -243,7 +243,7 @@ export function HackerPortal({ isEventOpen, appsOpen }: HackerPortalProps) {
   const { user, updateUser } = useNextNexusUser();
   const closeModal = () => setModalOpen(false);
   const [choice, setChoice] = useState<RSVPChoice | null>(null);
-  const { supabase: hbc } = useNext Nexus PlatformSupabase();
+  const { supabase: hbc } = useNextNexusSupabase();
   const client = hbc.getClient();
 
   const DeclineSpotContent = () => (

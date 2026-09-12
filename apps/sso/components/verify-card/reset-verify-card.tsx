@@ -4,15 +4,15 @@ import { Colors2023 } from '@nextnexus/styles';
 import OTPInput from '../otp-input/otp-input';
 import { useState } from 'react';
 import { useRouter } from 'next/router';
-import { Next Nexus PlatformSupabaseClient } from '@nextnexus/nextnexus-supabase-client';
+import { NextNexusSupabaseClient } from '@nextnexus/nextnexus-supabase-client';
 import Image from 'next/image';
 import { MutatingDots } from 'react-loader-spinner';
 import { Button } from '@nextnexus/ui-kit-2023';
-import { useNext Nexus PlatformSupabase } from '@nextnexus/nextnexus-supabase-context';
+import { useNextNexusSupabase } from '@nextnexus/nextnexus-supabase-context';
 
 export function ResetVerifyCard() {
   const router = useRouter();
-  const { supabase } = useNext Nexus PlatformSupabase();
+  const { supabase } = useNextNexusSupabase();
   const [verifyState, setVerifyState] = useState('');
   const [hideErrorMessage, setHideErrorMessage] = useState(false);
   const [code, setCode] = useState('');
@@ -31,7 +31,7 @@ export function ResetVerifyCard() {
     if (data.user) {
       setVerifyState('verifying');
 
-      Next Nexus PlatformSupabaseClient.setTokenCookieClientSide(
+      NextNexusSupabaseClient.setTokenCookieClientSide(
         data.session.access_token,
         data.session.refresh_token
       );

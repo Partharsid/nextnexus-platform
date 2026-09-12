@@ -5,7 +5,7 @@ import { Colors2023 } from '@nextnexus/styles';
 import Image from 'next/image';
 import * as SSOClient from '@nextnexus/sso-client';
 import GrayLink from '../gray-link/gray-link';
-import { useNext Nexus PlatformSupabase } from '@nextnexus/nextnexus-supabase-context';
+import { useNextNexusSupabase } from '@nextnexus/nextnexus-supabase-context';
 import { MutatingDots } from 'react-loader-spinner';
 import { StyledAuthCard } from '../auth-components/styled-card';
 import { Input } from '../auth-components/styled-input';
@@ -24,7 +24,7 @@ export function LoginCard() {
   const [hideErrorMessage, setHideErrorMessage] = useState(true);
   const [errorMessage, setErrorMessage] = useState('');
   const [loggedInState, setLoggedInState] = useState('');
-  const { supabase } = useNext Nexus PlatformSupabase();
+  const { supabase } = useNextNexusSupabase();
 
   async function handleSubmit(event) {
     event.preventDefault();

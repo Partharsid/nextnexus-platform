@@ -17,7 +17,7 @@ import { formatTimestamp } from '../../../common/format-timestamp';
 import { PostgrestError } from '@supabase/supabase-js';
 import { NextNexusRole } from '@nextnexus/types';
 import useNextNexusUser from '../../../hooks/use-nextnexus-user/use-nextnexus-user';
-import { useNext Nexus PlatformSupabase } from '@nextnexus/nextnexus-supabase-context';
+import { useNextNexusSupabase } from '@nextnexus/nextnexus-supabase-context';
 import { SearchUserBox } from 'apps/dashboard/components/identity-portal/search-user-box/search-user-box';
 
 const SUCCESS_MESSAGE = 'Success';
@@ -54,7 +54,7 @@ export function Index() {
 
   const [attendees, setAttendees] = useState<Attendee[]>([]);
 
-  const { supabase } = useNext Nexus PlatformSupabase();
+  const { supabase } = useNextNexusSupabase();
 
   const wristbandIdRef = useRef(null);
 
