@@ -1,6 +1,6 @@
 import { Colors2023 } from '@nextnexus/styles';
-import { Next Nexus PlatformRole } from '@nextnexus/types';
+import { NextNexusRole } from '@nextnexus/types';
 
-export const getColorsForRole = (role: Next Nexus PlatformRole) => {
+export const getColorsForRole = (role: NextNexusRole) => {
   return Colors2023.roleColors[role];
 };

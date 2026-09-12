@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import useNext Nexus PlatformUser from '../hooks/use-nextnexus-user/use-nextnexus-user';
-import { ApplicationStatus, Next Nexus PlatformRole } from '@nextnexus/types';
+import useNextNexusUser from '../hooks/use-nextnexus-user/use-nextnexus-user';
+import { ApplicationStatus, NextNexusRole } from '@nextnexus/types';
 import HackerPortal from '../components/hacker-portal/hacker-portal';
 import IdentityPortal from '../components/identity-portal/identity-portal';
 import SponsorPortal from '../components/sponsor-portal/sponsor-portal';
@@ -26,7 +26,7 @@ interface ServerSideProps {
 export function Index({ appsOpen, waitlistOpen }: ServerSideProps) {
   const dispatch = useAppDispatch();
   const { supabase } = useNext Nexus PlatformSupabase();
-  const { user } = useNext Nexus PlatformUser();
+  const { user } = useNextNexusUser();
 
   const [hackerPortalOpen, setHackerPortalOpen] = useState(null);
 
@@ -84,7 +84,7 @@ export function Index({ appsOpen, waitlistOpen }: ServerSideProps) {
   }
 
   const Dashboard = () => {
-    if (user.role === Next Nexus PlatformRole.HACKER) {
+    if (user.role === NextNexusRole.HACKER) {
       if (
         !appsOpen &&
         !waitlistOpen &&
@@ -104,13 +104,13 @@ export function Index({ appsOpen, waitlistOpen }: ServerSideProps) {
       return (
         <HackerPortal isEventOpen={hackerPortalOpen} appsOpen={appsOpen} />
       );
-    } else if (user.role === Next Nexus PlatformRole.SPONSOR) {
+    } else if (user.role === NextNexusRole.SPONSOR) {
       router.push('/sponsor-booth');
       return <></>;
-    } else if (user.role === Next Nexus PlatformRole.JUDGE) {
+    } else if (user.role === NextNexusRole.JUDGE) {
       window.location.replace('https://podium.nextnexus.com');
       return <></>;
-    } else if (user.role === Next Nexus PlatformRole.VOLUNTEER) {
+    } else if (user.role === NextNexusRole.VOLUNTEER) {
       router.push('/identity-portal/attendee-event-scan');
       return <></>;
     }

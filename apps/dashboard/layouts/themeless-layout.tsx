@@ -1,12 +1,12 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import styled from 'styled-components';
-import useNext Nexus PlatformUser from '../hooks/use-nextnexus-user/use-nextnexus-user';
+import useNextNexusUser from '../hooks/use-nextnexus-user/use-nextnexus-user';
 import StyledSideNav from '../components/nav/side-nav';
 import { Colors, Text } from '@hacksc/sctw-ui-kit';
 import { logout } from '@nextnexus/sso-client';
 import Image from 'next/image';
 import { GlowSpan } from '@nextnexus/ui-kit-2023';
-import { Next Nexus PlatformRole } from '@nextnexus/types';
+import { NextNexusRole } from '@nextnexus/types';
 import { Colors2023 } from '@nextnexus/styles';
 import { useMediaQuery } from 'react-responsive';
 import StyledTopNav from '../components/nav/top-nav';
@@ -27,23 +27,23 @@ export type ThemelessLayoutProps = React.PropsWithChildren;
 function ThemelessLayout({ children }: ThemelessLayoutProps) {
   const isSmallScreen = useMediaQuery({ query: '(max-width: 600px)' });
 
-  const { user } = useNext Nexus PlatformUser();
+  const { user } = useNextNexusUser();
   const color = useMemo(() => {
     if (user == null) return Colors.Yellow.ArthurSweater;
-    if (user.role === Next Nexus PlatformRole.HACKER) return Colors.Red.Redward;
-    if (user.role === Next Nexus PlatformRole.VOLUNTEER) return Colors.Red.Redward;
-    if (user.role === Next Nexus PlatformRole.SPONSOR) return Colors.Red.Redward;
+    if (user.role === NextNexusRole.HACKER) return Colors.Red.Redward;
+    if (user.role === NextNexusRole.VOLUNTEER) return Colors.Red.Redward;
+    if (user.role === NextNexusRole.SPONSOR) return Colors.Red.Redward;
     return Colors.Yellow.ArthurSweater;
   }, [user]);
   const shadowColor = useMemo(() => {
     if (user == null) return Colors.Yellow.Yuhlow;
-    if (user.role === Next Nexus PlatformRole.HACKER) return Colors.Yellow.Yuhlow;
-    if (user.role === Next Nexus PlatformRole.SPONSOR) return Colors.Red.Redward;
+    if (user.role === NextNexusRole.HACKER) return Colors.Yellow.Yuhlow;
+    if (user.role === NextNexusRole.SPONSOR) return Colors.Red.Redward;
     return Colors.Yellow.Yuhlow;
   }, [user]);
   const navbarOptions = useMemo(() => {
     if (user == null) return [];
-    if (user.role === Next Nexus PlatformRole.HACKER)
+    if (user.role === NextNexusRole.HACKER)
       return [
         { name: 'Events', url: '/events', image: MdOutlineCalendarViewMonth },
         { name: 'Leaderboard', url: '/leaderboard', image: MdStarOutline },
@@ -54,7 +54,7 @@ function ThemelessLayout({ children }: ThemelessLayoutProps) {
           image: IoDocumentTextOutline,
         },
       ];
-    if (user.role === Next Nexus PlatformRole.VOLUNTEER)
+    if (user.role === NextNexusRole.VOLUNTEER)
       return [
         {
           name: 'Identity Portal',
@@ -67,7 +67,7 @@ function ThemelessLayout({ children }: ThemelessLayoutProps) {
           image: MdOutlinePlaylistAddCheck,
         },
       ];
-    if (user.role === Next Nexus PlatformRole.SPONSOR)
+    if (user.role === NextNexusRole.SPONSOR)
       return [
         {
           name: 'Events',
@@ -96,7 +96,7 @@ function ThemelessLayout({ children }: ThemelessLayoutProps) {
       }
     };
 
-    if (user != null && user.role === Next Nexus PlatformRole.SPONSOR) {
+    if (user != null && user.role === NextNexusRole.SPONSOR) {
       fetchData();
     }
   }, [user]);

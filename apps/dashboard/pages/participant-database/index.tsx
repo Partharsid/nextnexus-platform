@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
-import useNext Nexus PlatformUser from '../../hooks/use-nextnexus-user/use-nextnexus-user';
+import useNextNexusUser from '../../hooks/use-nextnexus-user/use-nextnexus-user';
 import { Attendee } from 'apps/dashboard/common/mock-sponsor';
 import { useRouter } from 'next/router';
 import { useNext Nexus PlatformSupabase } from '@nextnexus/nextnexus-supabase-context';
@@ -19,7 +19,7 @@ export default function Index() {
   const router = useRouter();
   const supabase = useNext Nexus PlatformSupabase().supabase.getClient();
 
-  const { user } = useNext Nexus PlatformUser();
+  const { user } = useNextNexusUser();
   const [COMPANY_ID, setCompanyId] = useState(null);
   const [EVENT_ID, setEventId] = useState(null);
   useEffect(() => {

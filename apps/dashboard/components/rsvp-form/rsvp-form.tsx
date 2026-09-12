@@ -7,7 +7,7 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { SpanRed } from '../red-span';
 import { useNext Nexus PlatformSupabase } from '@nextnexus/nextnexus-supabase-context';
-import useNext Nexus PlatformUser from '../../hooks/use-nextnexus-user/use-nextnexus-user';
+import useNextNexusUser from '../../hooks/use-nextnexus-user/use-nextnexus-user';
 import { toast } from 'react-hot-toast';
 import * as Sentry from '@sentry/browser';
 import axios from 'axios';
@@ -22,7 +22,7 @@ interface Props {
 
 function RSVPForm({ closeModal }: Props) {
   // const [discordToken, setDiscordToken] = useState<string | null>(null);
-  const { user, updateUser } = useNext Nexus PlatformUser();
+  const { user, updateUser } = useNextNexusUser();
   const { supabase } = useNext Nexus PlatformSupabase();
 
   const discordInvite = getEnv().Next Nexus Platform.Discord.InviteUrl;

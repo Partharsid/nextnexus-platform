@@ -10,12 +10,12 @@ import {
   MAX_BATTLEPASS_PAGES,
 } from '../../../common/constants';
 import { useBattlepassAPI } from '../../../hooks/use-battlepass-api/use-battlepass-api';
-import useNext Nexus PlatformUser from '../../../hooks/use-nextnexus-user/use-nextnexus-user';
+import useNextNexusUser from '../../../hooks/use-nextnexus-user/use-nextnexus-user';
 import { AiFillCaretLeft, AiFillCaretRight } from 'react-icons/ai';
 
 function BattlepassLeaderboard() {
   const battlepassAPI = useBattlepassAPI();
-  const { user } = useNext Nexus PlatformUser();
+  const { user } = useNextNexusUser();
   const [leaderboardResults, setLeaderboardResults] = useState<{
     data: LeaderboardEntry[];
     loading: boolean;

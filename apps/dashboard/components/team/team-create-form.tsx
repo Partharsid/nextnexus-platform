@@ -8,7 +8,7 @@ import * as Yup from 'yup';
 import { SpanRed } from '../red-span';
 import { useTeam } from '../../hooks/use-team/use-team';
 import { TeamServiceAPI } from '../../common/api';
-import useNext Nexus PlatformUser from '../../hooks/use-nextnexus-user/use-nextnexus-user';
+import useNextNexusUser from '../../hooks/use-nextnexus-user/use-nextnexus-user';
 
 interface Props {
   closeModal: () => void;
@@ -16,7 +16,7 @@ interface Props {
 
 export const TeamCreateForm = (props: Props) => {
   const { updateTeam } = useTeam();
-  const { user } = useNext Nexus PlatformUser();
+  const { user } = useNextNexusUser();
   const formik = useFormik({
     initialValues: {
       name: '',

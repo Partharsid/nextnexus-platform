@@ -1,4 +1,4 @@
-import { Next Nexus PlatformRole } from '@nextnexus/types';
+import { NextNexusRole } from '@nextnexus/types';
 
 const DefaultRole = (() => {
   if (process.env.SSO_DEFAULT_ROLE != null) {
@@ -7,7 +7,7 @@ const DefaultRole = (() => {
       return role;
     }
     // Default role = HACKER
-    return Object.keys(Next Nexus PlatformRole).indexOf(Next Nexus PlatformRole.HACKER) + 1;
+    return Object.keys(NextNexusRole).indexOf(NextNexusRole.HACKER) + 1;
   }
 })();
 

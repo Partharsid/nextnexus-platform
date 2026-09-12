@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import 'nprogress/nprogress.css';
-import useNext Nexus PlatformUser from '../../hooks/use-nextnexus-user/use-nextnexus-user';
+import useNextNexusUser from '../../hooks/use-nextnexus-user/use-nextnexus-user';
 import { H3, Link } from '@nextnexus/ui';
 import { Button } from '@nextnexus/ui-kit-2023';
 import styled from 'styled-components';
@@ -27,7 +27,7 @@ interface ServerSideProps {
 }
 
 export function Index({ appsOpen, waitlistOpen }: ServerSideProps) {
-  const { user } = useNext Nexus PlatformUser();
+  const { user } = useNextNexusUser();
 
   const router = useRouter();
 

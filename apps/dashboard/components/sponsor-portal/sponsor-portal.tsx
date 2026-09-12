@@ -3,12 +3,12 @@
 import styled from 'styled-components';
 import { Link } from '@nextnexus/ui';
 import { Colors2023 } from '@nextnexus/styles';
-import { Next Nexus PlatformUser } from '@nextnexus/types';
+import { NextNexusUser } from '@nextnexus/types';
 import { H1, H2, H3 } from '@nextnexus/ui';
 import Image from 'next/image';
 
 interface Props {
-  user: Next Nexus PlatformUser;
+  user: NextNexusUser;
 }
 
 export function SponsorPortal({ user }: Props) {

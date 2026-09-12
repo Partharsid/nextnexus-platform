@@ -4,7 +4,7 @@ import { formMetadata2023HackerApps } from '../../common/hackform.metadata';
 import { useHackform } from '../../hooks/use-hackform/use-hackform';
 import NProgress from 'nprogress';
 import 'nprogress/nprogress.css';
-import useNext Nexus PlatformUser from '../../hooks/use-nextnexus-user/use-nextnexus-user';
+import useNextNexusUser from '../../hooks/use-nextnexus-user/use-nextnexus-user';
 import { H3, Link } from '@nextnexus/ui';
 import { Button } from '@nextnexus/ui-kit-2023';
 import styled from 'styled-components';
@@ -20,7 +20,7 @@ NProgress.configure({ showSpinner: false, trickle: false, minimum: 0.05 });
 
 export function Index({ appsOpen }: ServerSideProps) {
   const { currentQuestionIndex: cqi, ...hackformUtils } = useHackform();
-  const { user } = useNext Nexus PlatformUser();
+  const { user } = useNextNexusUser();
 
   useEffect(() => {
     const numQuestionsTotal =

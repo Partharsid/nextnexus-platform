@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import useNext Nexus PlatformUser from '../../hooks/use-nextnexus-user/use-nextnexus-user';
+import useNextNexusUser from '../../hooks/use-nextnexus-user/use-nextnexus-user';
 import Image from 'next/image';
 import { Colors2023 } from '@nextnexus/styles';
 import { BoldText, H1, Modal } from '@nextnexus/ui';
@@ -10,7 +10,7 @@ import HackerProfile from '../../components/sponsor-portal/hacker-profile';
 import { useRouter } from 'next/router';
 import { Attendee } from '../../common/mock-sponsor';
 import { useNext Nexus PlatformSupabase } from '@nextnexus/nextnexus-supabase-context';
-import { Next Nexus PlatformRole } from '@nextnexus/types';
+import { NextNexusRole } from '@nextnexus/types';
 import { ParagraphText } from '@nextnexus/ui-kit-2023';
 import { getWordCount } from '../../common/utils';
 import { SponsorServiceAPI } from '../../common/api';
@@ -38,7 +38,7 @@ import { getCookie } from 'cookies-next';
 import EventDetails from 'apps/dashboard/components/events/event-details';
 
 const Index = () => {
-  const { user } = useNext Nexus PlatformUser();
+  const { user } = useNextNexusUser();
   const [COMPANY_ID, setCompanyId] = useState('');
   const [EVENT_ID, setEventId] = useState('');
   const [attendees, setAttendees] = useState<Attendee[]>([]);
@@ -185,7 +185,7 @@ const Index = () => {
     return <>Loading</>;
   }
   // Limit access to only sponsor or admin role
-  if (![Next Nexus PlatformRole.SPONSOR, Next Nexus PlatformRole.ADMIN].includes(user?.role)) {
+  if (![NextNexusRole.SPONSOR, NextNexusRole.ADMIN].includes(user?.role)) {
     router.push('/');
     return <></>;
   }
@@ -511,7 +511,7 @@ const Index = () => {
             setError={() => {}}
             setPinnedEvents={setPinnedEvents}
             refresh={() => {}}
-            admin={user.role === Next Nexus PlatformRole.ADMIN}
+            admin={user.role === NextNexusRole.ADMIN}
           />
         )}
       </Modal>

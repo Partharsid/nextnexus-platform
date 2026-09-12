@@ -4,14 +4,14 @@ import TeamHeader from '../../components/team/team-header';
 import TeamMembersWidget from '../../components/team/team-members-widget';
 import NoTeamPlaceholder from '../../components/team/no-team-placeholder';
 import { useTeam } from '../../hooks/use-team/use-team';
-import useNext Nexus PlatformUser from '../../hooks/use-nextnexus-user/use-nextnexus-user';
+import useNextNexusUser from '../../hooks/use-nextnexus-user/use-nextnexus-user';
 import { TeamServiceAPI } from '../../common/api';
 import { Text } from '@nextnexus/ui';
 import Image from 'next/image';
 
 const Index = () => {
   const { updateTeam, isLoading, noTeam, setNoTeam } = useTeam();
-  const { user } = useNext Nexus PlatformUser();
+  const { user } = useNextNexusUser();
 
   useEffect(() => {
     if (!user) return;

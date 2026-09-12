@@ -8,25 +8,25 @@ import { changeTab, toggleMenuOpen } from '../../store/menu-slice';
 import { useRouter } from 'next/router';
 import React, { useCallback, useEffect } from 'react';
 import styled from 'styled-components';
-import { Next Nexus PlatformRole } from '@nextnexus/types';
-import useNext Nexus PlatformUser from '../../hooks/use-nextnexus-user/use-nextnexus-user';
+import { NextNexusRole } from '@nextnexus/types';
+import useNextNexusUser from '../../hooks/use-nextnexus-user/use-nextnexus-user';
 
 /* eslint-disable-next-line */
 export interface PortalMenuProps {}
 
 export function PortalMenu() {
-  const { user } = useNext Nexus PlatformUser();
+  const { user } = useNextNexusUser();
   const router = useRouter();
   const { tabRoutes, cti, isOpen } = useAppSelector((state) => ({
     tabRoutes:
-      (user?.role === Next Nexus PlatformRole.HACKER && state.menu.tabRoutes) ||
-      (user?.role === Next Nexus PlatformRole.SPONSOR && state.menu.sponsorRoutes) ||
+      (user?.role === NextNexusRole.HACKER && state.menu.tabRoutes) ||
+      (user?.role === NextNexusRole.SPONSOR && state.menu.sponsorRoutes) ||
       [],
     cti: state.menu.currentTabIndex,
     isOpen: state.menu.isOpen,
   }));
   const dispatch = useAppDispatch();
-  const colors = getColorsForRole(user?.role ?? Next Nexus PlatformRole.HACKER);
+  const colors = getColorsForRole(user?.role ?? NextNexusRole.HACKER);
 
   const getTabIndexFromPageRoute = useCallback(() => {
     const fti = tabRoutes.findIndex((item) => item.url === router.pathname);

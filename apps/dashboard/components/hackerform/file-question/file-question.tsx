@@ -5,7 +5,7 @@ import QuestionCreator from '../question-creator/question-creator';
 import { ALLOWED_RESUME_FORMATS } from '../../../common/constants';
 import mime from 'mime-types';
 import { useHackform } from '../../../hooks/use-hackform/use-hackform';
-import useNext Nexus PlatformUser from '../../../hooks/use-nextnexus-user/use-nextnexus-user';
+import useNextNexusUser from '../../../hooks/use-nextnexus-user/use-nextnexus-user';
 import { Button } from '@nextnexus/ui-kit-2023';
 import styled from 'styled-components';
 import { Text } from '@nextnexus/ui';
@@ -14,7 +14,7 @@ import { ImCross } from 'react-icons/im';
 import { useNext Nexus PlatformSupabase } from '@nextnexus/nextnexus-supabase-context';
 
 export const FileQuestion = () => {
-  const { user } = useNext Nexus PlatformUser();
+  const { user } = useNextNexusUser();
   const { currentQuestionIndex: cqi, ...hackformUtils } = useHackform();
   const { supabase } = useNext Nexus PlatformSupabase();
   const lastInput = hackformUtils.getCurrentResponse()?.input;

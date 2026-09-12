@@ -11,8 +11,8 @@ import { BackButton } from '../../../components/identity-portal/back-button/back
 import { CheckInBox } from '../../../components/identity-portal/check-in-box/check-in-box';
 import { ImCross } from 'react-icons/im';
 import { formatTimestamp } from '../../../common/format-timestamp';
-import useNext Nexus PlatformUser from '../../../hooks/use-nextnexus-user/use-nextnexus-user';
-import { Next Nexus PlatformRole } from '@nextnexus/types';
+import useNextNexusUser from '../../../hooks/use-nextnexus-user/use-nextnexus-user';
+import { NextNexusRole } from '@nextnexus/types';
 import {
   BATTLEPASS_LEVEL_POINTS,
   calculateBattlepassProgress,
@@ -165,12 +165,12 @@ export function Index() {
     }
   }, [user]);
 
-  const { user: authUser } = useNext Nexus PlatformUser();
+  const { user: authUser } = useNextNexusUser();
   if (authUser == null) {
     return <>Loading</>;
   }
   // Limit access to only volunteer role
-  if (authUser?.role !== Next Nexus PlatformRole.VOLUNTEER) {
+  if (authUser?.role !== NextNexusRole.VOLUNTEER) {
     router.push('/');
     return <></>;
   }

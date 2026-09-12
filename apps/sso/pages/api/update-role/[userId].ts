@@ -1,5 +1,5 @@
 import { Next Nexus PlatformSupabaseClient } from '@nextnexus/nextnexus-supabase-client';
-import { Next Nexus PlatformRole } from '@nextnexus/types';
+import { NextNexusRole } from '@nextnexus/types';
 import { NextApiHandler } from 'next';
 import { container } from 'tsyringe';
 

@@ -1,11 +1,11 @@
-import { Next Nexus PlatformRole } from './roles';
+import { NextNexusRole } from './roles';
 import { ApplicationStatus } from './application-status';
 
-export interface Next Nexus PlatformUser {
+export interface NextNexusUser {
   id: string;
   firstName: string;
   lastName: string;
-  role: Next Nexus PlatformRole;
+  role: NextNexusRole;
   tag: string;
   email: string;
   applicationId?: string;

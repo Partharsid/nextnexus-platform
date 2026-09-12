@@ -14,7 +14,7 @@ import {
   BattlepassAPIProvider,
   useBattlepassAPI,
 } from '../../hooks/use-battlepass-api/use-battlepass-api';
-import useNext Nexus PlatformUser from '../../hooks/use-nextnexus-user/use-nextnexus-user';
+import useNextNexusUser from '../../hooks/use-nextnexus-user/use-nextnexus-user';
 import { useEffect, useState } from 'react';
 import PinnedEvents from '../../components/events/pinned-events';
 import {
@@ -24,7 +24,7 @@ import {
   isSameDate,
 } from '../../common/events.utils';
 import EventDetails from '../../components/events/event-details';
-import { Next Nexus PlatformRole } from '@nextnexus/types';
+import { NextNexusRole } from '@nextnexus/types';
 import { useMediaQuery } from 'react-responsive';
 import EventList, { EventListType } from '../../components/events/event-list';
 import { getCookie } from 'cookies-next';
@@ -55,7 +55,7 @@ function EventPage() {
 
   // Battlepass React hooks
   const battlepassAPI = useBattlepassAPI();
-  const { user } = useNext Nexus PlatformUser();
+  const { user } = useNextNexusUser();
   const [bpProg, setBattlepassProgress] = useState<BattlepassProgress | null>(
     null
   );
@@ -337,7 +337,7 @@ function EventPage() {
             setError={setError}
             setPinnedEvents={setPinnedEvents}
             refresh={refresh}
-            admin={user.role === Next Nexus PlatformRole.ADMIN}
+            admin={user.role === NextNexusRole.ADMIN}
           />
         )}
       </Modal>

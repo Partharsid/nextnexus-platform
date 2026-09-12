@@ -1,4 +1,4 @@
-import { Next Nexus PlatformRole, Next Nexus PlatformUser } from '@nextnexus/types';
+import { NextNexusRole, NextNexusUser } from '@nextnexus/types';
 import { getCookie } from 'cookies-next';
 import {
   Dispatch,
@@ -17,9 +17,9 @@ import React from 'react';
 import { Next Nexus PlatformSupabaseClient } from '@nextnexus/nextnexus-supabase-client';
 import { useNext Nexus PlatformSupabase } from '@nextnexus/nextnexus-supabase-context';
 
-const Next Nexus PlatformUserContext = React.createContext<{
-  user: Next Nexus PlatformUser | null;
-  setUser: Dispatch<SetStateAction<Next Nexus PlatformUser>> | null;
+const NextNexusUserContext = React.createContext<{
+  user: NextNexusUser | null;
+  setUser: Dispatch<SetStateAction<NextNexusUser>> | null;
 }>({
   user: null,
   setUser: null,
@@ -29,7 +29,7 @@ const getUserProfile = async (
   accessToken: string,
   refreshToken: string,
   supabase: Next Nexus PlatformSupabaseClient
-): Promise<Next Nexus PlatformUser> => {
+): Promise<NextNexusUser> => {
   // Get user profile from db
   // uses cookie set from SSO
   const profile = await supabase.getUserProfile(accessToken, refreshToken);
@@ -38,7 +38,7 @@ const getUserProfile = async (
     return {
       id: profile.user_id,
       tag: `${profile.first_name} ${profile.last_name}`,
-      role: Object.values(Next Nexus PlatformRole)[profile.role - 1],
+      role: Object.values(NextNexusRole)[profile.role - 1],
       firstName: profile.first_name,
       lastName: profile.last_name,
       applicationId: profile.app_id,
@@ -58,7 +58,7 @@ const getUserProfile = async (
     return {
       id: user.data.user.id,
       tag: user.data.user.email,
-      role: Next Nexus PlatformRole.HACKER,
+      role: NextNexusRole.HACKER,
       firstName: user.data.user.email,
       lastName: null,
       applicationId: null,
@@ -68,8 +68,8 @@ const getUserProfile = async (
   }
 };
 
-export const Next Nexus PlatformUserProvider = (props: React.PropsWithChildren) => {
-  const [user, setUser] = useState<Next Nexus PlatformUser | null>(null);
+export const NextNexusUserProvider = (props: React.PropsWithChildren) => {
+  const [user, setUser] = useState<NextNexusUser | null>(null);
   const { supabase } = useNext Nexus PlatformSupabase();
 
   const accessToken = getCookie(
@@ -87,17 +87,17 @@ export const Next Nexus PlatformUserProvider = (props: React.PropsWithChildren) 
   }, [accessToken, refreshToken]);
 
   return (
-    <Next Nexus PlatformUserContext.Provider value={{ user, setUser }}>
+    <NextNexusUserContext.Provider value={{ user, setUser }}>
       {props.children}
-    </Next Nexus PlatformUserContext.Provider>
+    </NextNexusUserContext.Provider>
   );
 };
 
-export function useNext Nexus PlatformUser() {
-  const { user, setUser } = useContext(Next Nexus PlatformUserContext);
+export function useNextNexusUser() {
+  const { user, setUser } = useContext(NextNexusUserContext);
   const dispatch = useAppDispatch();
 
-  const updateUser = (update: Partial<Next Nexus PlatformUser>) => {
+  const updateUser = (update: Partial<NextNexusUser>) => {
     setUser((prev) => ({
       ...prev,
       ...update,
@@ -114,4 +114,4 @@ export function useNext Nexus PlatformUser() {
   return { user, setUser, getUserProfile, updateUser };
 }
 
-export default useNext Nexus PlatformUser;
+export default useNextNexusUser;

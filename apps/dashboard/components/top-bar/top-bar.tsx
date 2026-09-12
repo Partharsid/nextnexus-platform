@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import Image from 'next/image';
 import { Link, Text } from '@nextnexus/ui';
 import { GlowSpan } from '@nextnexus/ui-kit-2023';
-import { Next Nexus PlatformRole } from '@nextnexus/types';
+import { NextNexusRole } from '@nextnexus/types';
 import { Colors2023 } from '@nextnexus/styles';
 import { logout } from '@nextnexus/sso-client';
 import Next NexusLogo from '../svg/nextnexus-logo';
@@ -10,11 +10,11 @@ import Next NexusLogo from '../svg/nextnexus-logo';
 /* eslint-disable-next-line */
 export interface TopBarProps {
   userTag: string;
-  role: Next Nexus PlatformRole; // TODO: replace this with role type/enum
+  role: NextNexusRole; // TODO: replace this with role type/enum
 }
 
 export function TopBar(props: TopBarProps) {
-  const userColors = Colors2023.roleColors[props.role ?? Next Nexus PlatformRole.HACKER];
+  const userColors = Colors2023.roleColors[props.role ?? NextNexusRole.HACKER];
   return (
     <StyledTopBar>
       <Link href="/" anchortagpropsoverride={{ target: '_self' }}>

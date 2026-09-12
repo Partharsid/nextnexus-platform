@@ -5,7 +5,7 @@ import './styles.css';
 import '../components/events/event-list.global.css';
 import { wrapper } from '../store/store';
 import styled from 'styled-components';
-import { Next Nexus PlatformUserProvider } from '../hooks/use-nextnexus-user/use-nextnexus-user';
+import { NextNexusUserProvider } from '../hooks/use-nextnexus-user/use-nextnexus-user';
 import PortalLayout from '../layouts/portal-layout';
 import { useRouter } from 'next/router';
 import { getWebTitle } from '@nextnexus/metadata';
@@ -62,7 +62,7 @@ function CustomApp({ Component, pageProps }: AppProps) {
         <GlobalStyles2024 />
         <SupabaseContextProvider>
           <TeamProvider>
-            <Next Nexus PlatformUserProvider>
+            <NextNexusUserProvider>
               {newLayoutRoutes.includes(router?.pathname) ? (
                 <ThemelessLayout>
                   <Component {...pageProps} />
@@ -72,7 +72,7 @@ function CustomApp({ Component, pageProps }: AppProps) {
                   <Component {...pageProps} />
                 </PortalLayout>
               )}
-            </Next Nexus PlatformUserProvider>
+            </NextNexusUserProvider>
           </TeamProvider>
         </SupabaseContextProvider>
       </Main>

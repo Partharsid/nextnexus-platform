@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import Image from 'next/image';
 import { Link, Text } from '@nextnexus/ui';
 import { GlowSpan } from '@nextnexus/ui-kit-2023';
-import { Next Nexus PlatformRole } from '@nextnexus/types';
+import { NextNexusRole } from '@nextnexus/types';
 import { Colors2023 } from '@nextnexus/styles';
 import { logout } from '@nextnexus/sso-client';
 import Next NexusLogo from '../svg/nextnexus-logo';

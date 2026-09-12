@@ -9,13 +9,13 @@ import { TeamMember } from '../../common/types';
 import { toast } from 'react-hot-toast';
 import { useTeam } from '../../hooks/use-team/use-team';
 import { TeamServiceAPI } from '../../common/api';
-import useNext Nexus PlatformUser from '../../hooks/use-nextnexus-user/use-nextnexus-user';
+import useNextNexusUser from '../../hooks/use-nextnexus-user/use-nextnexus-user';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { SpanRed } from '../red-span';
 
 function TeamMembersWidget() {
-  const { user } = useNext Nexus PlatformUser();
+  const { user } = useNextNexusUser();
   const { team, updateTeam, removeMember } = useTeam();
   const [isOpen, setOpen] = useState(false);
   const isUserAdmin = team.organizerId === user?.id;

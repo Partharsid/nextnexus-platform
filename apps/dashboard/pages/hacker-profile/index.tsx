@@ -5,12 +5,12 @@ import styled from 'styled-components';
 import Star4 from '../../components/svg/star-4';
 import { GrEdit } from 'react-icons/gr';
 
-import useNext Nexus PlatformUser from '../../hooks/use-nextnexus-user/use-nextnexus-user';
+import useNextNexusUser from '../../hooks/use-nextnexus-user/use-nextnexus-user';
 
 export function Index() {
   const [isEditing, setIsEditing] = useState(false);
   const [profileImage, setProfileImage] = useState(null);
-  const { user } = useNext Nexus PlatformUser();
+  const { user } = useNextNexusUser();
   const handlePfpEdit = async (event) => {
     const formData = new FormData();
     formData.append('file', event.target.files[0]);

@@ -1,4 +1,4 @@
-export enum Next Nexus PlatformRole {
+export enum NextNexusRole {
   ADMIN = 'ADMIN',
   TEAM_MEMBER = 'TEAM MEMBER',
   SPONSOR = 'SPONSOR',

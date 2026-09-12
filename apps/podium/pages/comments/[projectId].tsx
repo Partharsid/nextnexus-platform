@@ -9,15 +9,15 @@ import Link from 'next/link';
 import * as styles from '../../styles/index.css';
 import { getCookie } from 'cookies-next';
 import { getEnv } from '@nextnexus/env';
-import { useNext Nexus PlatformUser } from '@nextnexus/nextnexus-user-context';
-import { Next Nexus PlatformRole } from '@nextnexus/types';
+import { useNextNexusUser } from '@nextnexus/nextnexus-user-context';
+import { NextNexusRole } from '@nextnexus/types';
 
 const HIBISCUS_PODIUM_API_URL = process.env.NEXT_PUBLIC_HIBISCUS_PODIUM_API_URL;
 
 export function Index() {
   const env = getEnv();
 
-  const { user } = useNext Nexus PlatformUser();
+  const { user } = useNextNexusUser();
 
   const router = useRouter();
 
@@ -56,7 +56,7 @@ export function Index() {
     return <></>;
   }
 
-  if (user?.role !== Next Nexus PlatformRole.JUDGE) {
+  if (user?.role !== NextNexusRole.JUDGE) {
     window.location.assign(env.Next Nexus Platform.AppURL.portal);
     return <></>;
   }

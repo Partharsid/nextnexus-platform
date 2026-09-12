@@ -13,7 +13,7 @@ import { Colors2023 } from '@nextnexus/styles';
 import { BoldText, Text } from '@nextnexus/ui';
 import { ImCross } from 'react-icons/im';
 import { Event, getDayDate, unpinEvent } from '../../common/events.utils';
-import useNext Nexus PlatformUser from '../../hooks/use-nextnexus-user/use-nextnexus-user';
+import useNextNexusUser from '../../hooks/use-nextnexus-user/use-nextnexus-user';
 import { getCookie } from 'cookies-next';
 import { getEnv } from '@nextnexus/env';
 import { Colors } from '@hacksc/sctw-ui-kit';
@@ -53,7 +53,7 @@ function EventList(props: EventListProps) {
   const [column, setColumn] = useState<number>(0);
   const [expandedEvent, setExpandedEvent] = useState<string | null>(null);
 
-  const { user } = useNext Nexus PlatformUser();
+  const { user } = useNextNexusUser();
 
   const deleteItemById = (id: string) => {
     unpinEvent(

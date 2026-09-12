@@ -6,7 +6,7 @@ import { useHackform } from '../../../hooks/use-hackform/use-hackform';
 import Image from 'next/image';
 import styled from 'styled-components';
 import APIService from '../../../common/api';
-import useNext Nexus PlatformUser from '../../../hooks/use-nextnexus-user/use-nextnexus-user';
+import useNextNexusUser from '../../../hooks/use-nextnexus-user/use-nextnexus-user';
 import { useNext Nexus PlatformSupabase } from '@nextnexus/nextnexus-supabase-context';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
@@ -21,7 +21,7 @@ export interface HackformEndingProps {
 
 export const HackformEnding = ({ formMetadata }: HackformEndingProps) => {
   const hackformUtils = useHackform();
-  const { user, updateUser } = useNext Nexus PlatformUser();
+  const { user, updateUser } = useNextNexusUser();
   const { supabase } = useNext Nexus PlatformSupabase();
   const router = useRouter();
   const [submitting, setSubmitting] = useState(false);

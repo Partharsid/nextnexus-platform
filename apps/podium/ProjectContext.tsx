@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useState } from 'react';
 import getProjects from './utils/getProjects';
-import { useNext Nexus PlatformUser } from '@nextnexus/nextnexus-user-context';
+import { useNextNexusUser } from '@nextnexus/nextnexus-user-context';
 import { getJudgeDetails } from './utils/getJudgeDetails';
 import { Project } from './types';
 import { getCookie } from 'cookies-next';
@@ -21,7 +21,7 @@ const ProjectContext = createContext<ProjectContextType>(
 export const ProjectContextProvider = (props: React.PropsWithChildren) => {
   const env = getEnv();
 
-  const { user } = useNext Nexus PlatformUser();
+  const { user } = useNextNexusUser();
 
   const [rankedProjects, setRankedProjects] = useState<Project[]>([]);
   const [unrankedProjects, setUnrankedProjects] = useState<Project[]>([]);

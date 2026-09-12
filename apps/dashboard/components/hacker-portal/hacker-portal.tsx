@@ -2,14 +2,14 @@ import styled from 'styled-components';
 import { H2, Link, Modal, Text } from '@nextnexus/ui';
 import { Button, GlowSpan } from '@nextnexus/ui-kit-2023';
 import { Colors2023 } from '@nextnexus/styles';
-import { Next Nexus PlatformRole } from '@nextnexus/types';
+import { NextNexusRole } from '@nextnexus/types';
 import { H1, H3 } from '@nextnexus/ui';
 import { ApplicationStatus } from '@nextnexus/types';
 import { SVGProps, useState } from 'react';
 import RSVPForm from '../rsvp-form/rsvp-form';
 import { ComingSoon } from './coming-soon';
 import { getColorsForRole } from '../../common/role.utils';
-import useNext Nexus PlatformUser from '../../hooks/use-nextnexus-user/use-nextnexus-user';
+import useNextNexusUser from '../../hooks/use-nextnexus-user/use-nextnexus-user';
 import { GrayBox } from '../gray-box/gray-box';
 import { useNext Nexus PlatformSupabase } from '@nextnexus/nextnexus-supabase-context';
 import DeclinedPlaceholder from './declined-placeholder';
@@ -30,9 +30,9 @@ interface HackerPortalProps {
 
 export function HackerPortal({ isEventOpen, appsOpen }: HackerPortalProps) {
   // const [modalOpen, setModalOpen] = useState(false);
-  // const { user, updateUser } = useNext Nexus PlatformUser();
+  // const { user, updateUser } = useNextNexusUser();
   // const closeModal = () => setModalOpen(false);
-  // const userColors = getColorsForRole(user?.role ?? Next Nexus PlatformRole.HACKER);
+  // const userColors = getColorsForRole(user?.role ?? NextNexusRole.HACKER);
   // const [choice, setChoice] = useState<RSVPChoice | null>(null);
   // const { supabase: hbc } = useNext Nexus PlatformSupabase();
   // const client = hbc.getClient();
@@ -240,7 +240,7 @@ export function HackerPortal({ isEventOpen, appsOpen }: HackerPortalProps) {
   // );
 
   const [modalOpen, setModalOpen] = useState(false);
-  const { user, updateUser } = useNext Nexus PlatformUser();
+  const { user, updateUser } = useNextNexusUser();
   const closeModal = () => setModalOpen(false);
   const [choice, setChoice] = useState<RSVPChoice | null>(null);
   const { supabase: hbc } = useNext Nexus PlatformSupabase();

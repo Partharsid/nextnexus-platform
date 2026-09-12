@@ -1,5 +1,5 @@
 import { H1, H3 } from '@nextnexus/ui';
-import useNext Nexus PlatformUser from '../../hooks/use-nextnexus-user/use-nextnexus-user';
+import useNextNexusUser from '../../hooks/use-nextnexus-user/use-nextnexus-user';
 import axios from 'axios';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
@@ -10,7 +10,7 @@ import Next NexusGuy from '../svg/nextnexus-guy';
 
 export const ConfirmedPlaceholder = () => {
   // const [discordToken, setDiscordToken] = useState<string | null>(null);
-  const { user } = useNext Nexus PlatformUser();
+  const { user } = useNextNexusUser();
 
   const discordInvite = getEnv().Next Nexus Platform.Discord.InviteUrl;
 

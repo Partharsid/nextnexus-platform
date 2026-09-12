@@ -4,8 +4,8 @@ import { Text } from '@nextnexus/ui';
 import { GlowSpan } from '@nextnexus/ui-kit-2023';
 import styled from 'styled-components';
 import { BackButton } from '../../../components/identity-portal/back-button/back-button';
-import { Next Nexus PlatformRole } from '@nextnexus/types';
-import useNext Nexus PlatformUser from '../../../hooks/use-nextnexus-user/use-nextnexus-user';
+import { NextNexusRole } from '@nextnexus/types';
+import useNextNexusUser from '../../../hooks/use-nextnexus-user/use-nextnexus-user';
 import router from 'next/router';
 import { ScrollableListBox } from '../../../components/identity-portal/scrollable-list-box/scrollable-list-box';
 import { useEffect, useState } from 'react';
@@ -15,7 +15,7 @@ import { SearchUserBox } from 'apps/dashboard/components/identity-portal/search-
 import Select from 'react-select';
 
 export function Index() {
-  const { user: authUser } = useNext Nexus PlatformUser();
+  const { user: authUser } = useNextNexusUser();
   const { supabase } = useNext Nexus PlatformSupabase();
 
   //search for all events in supabase table
@@ -31,8 +31,8 @@ export function Index() {
   }
   // Limit access to only volunteer role
   if (
-    authUser?.role !== Next Nexus PlatformRole.VOLUNTEER &&
-    authUser?.role !== Next Nexus PlatformRole.SPONSOR
+    authUser?.role !== NextNexusRole.VOLUNTEER &&
+    authUser?.role !== NextNexusRole.SPONSOR
   ) {
     router.push('/');
     return <></>;

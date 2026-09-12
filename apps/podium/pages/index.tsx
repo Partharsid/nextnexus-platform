@@ -15,7 +15,7 @@ import {
 } from '@dnd-kit/core';
 import { arrayMove, SortableContext } from '@dnd-kit/sortable';
 import * as styles from '../styles/index.css';
-import { useNext Nexus PlatformUser } from '@nextnexus/nextnexus-user-context';
+import { useNextNexusUser } from '@nextnexus/nextnexus-user-context';
 import { updateProjectRanking } from '../utils/updateProjectRanking';
 import OnHoldDroppable from '../components/OnHoldDroppable';
 import ProjectDraggable from '../components/ProjectDraggable';
@@ -28,7 +28,7 @@ import { Modal } from '../utils/modal/modal';
 import smoothscroll from 'smoothscroll-polyfill';
 import { getCookie } from 'cookies-next';
 import { getEnv } from '@nextnexus/env';
-import { Next Nexus PlatformRole } from '@nextnexus/types';
+import { NextNexusRole } from '@nextnexus/types';
 
 const Index = () => {
   const env = getEnv();
@@ -58,7 +58,7 @@ const Index = () => {
     );
   }, [unrankedProjects, onHoldProjects]);
 
-  const { user } = useNext Nexus PlatformUser();
+  const { user } = useNextNexusUser();
 
   const allProjectIds = useMemo(() => {
     if (localRanked && localUnranked) {
@@ -312,7 +312,7 @@ const Index = () => {
     return <></>;
   }
 
-  if (![Next Nexus PlatformRole.JUDGE, Next Nexus PlatformRole.ADMIN].includes(user?.role)) {
+  if (![NextNexusRole.JUDGE, NextNexusRole.ADMIN].includes(user?.role)) {
     window.location.assign(env.Next Nexus Platform.AppURL.portal);
     return <></>;
   }

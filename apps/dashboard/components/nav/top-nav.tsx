@@ -6,8 +6,8 @@ import { BsPersonFill } from 'react-icons/bs';
 import { BsCalendarCheck } from 'react-icons/bs';
 import { HiOutlineSquares2X2 } from 'react-icons/hi2';
 import { useMediaQuery } from 'react-responsive';
-import { Next Nexus PlatformRole } from '@nextnexus/types';
-import useNext Nexus PlatformUser from '../../hooks/use-nextnexus-user/use-nextnexus-user';
+import { NextNexusRole } from '@nextnexus/types';
+import useNextNexusUser from '../../hooks/use-nextnexus-user/use-nextnexus-user';
 import { useMemo } from 'react';
 import { useRouter } from 'next/router';
 import { BiFolder } from 'react-icons/bi';
@@ -120,11 +120,11 @@ function StyledTopNav() {
 
   const router = useRouter();
 
-  const { user } = useNext Nexus PlatformUser();
+  const { user } = useNextNexusUser();
   const items = useMemo(() => {
     if (user == null) return [];
-    if (user.role === Next Nexus PlatformRole.HACKER) return JUDGE_NAVBAR;
-    if (user.role === Next Nexus PlatformRole.SPONSOR) return SPONSOR_NAVBAR;
+    if (user.role === NextNexusRole.HACKER) return JUDGE_NAVBAR;
+    if (user.role === NextNexusRole.SPONSOR) return SPONSOR_NAVBAR;
     return [];
   }, [user]);
 

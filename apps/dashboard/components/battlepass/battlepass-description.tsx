@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { H1, H3, H4, Modal, Text } from '@nextnexus/ui';
-import useNext Nexus PlatformUser from '../../hooks/use-nextnexus-user/use-nextnexus-user';
+import useNextNexusUser from '../../hooks/use-nextnexus-user/use-nextnexus-user';
 import { GlowSpan } from '@nextnexus/ui-kit-2023';
 import { Colors2023 } from '@nextnexus/styles';
 import Image from 'next/image';
@@ -9,7 +9,7 @@ import { AiFillInfoCircle } from 'react-icons/ai';
 import { GrayBox } from '../gray-box/gray-box';
 
 function BattlepassDescription() {
-  const { user } = useNext Nexus PlatformUser();
+  const { user } = useNextNexusUser();
   const [isModalOpen, setModalOpen] = useState(false);
 
   return (

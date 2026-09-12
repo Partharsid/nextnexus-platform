@@ -1,12 +1,12 @@
 import { H3, Link } from '@nextnexus/ui';
 import { Button } from '@nextnexus/ui-kit-2023';
-import useNext Nexus PlatformUser from '../../../hooks/use-nextnexus-user/use-nextnexus-user';
+import useNextNexusUser from '../../../hooks/use-nextnexus-user/use-nextnexus-user';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 export function Index() {
-  const { user } = useNext Nexus PlatformUser();
+  const { user } = useNextNexusUser();
   const router = useRouter();
   const [appId, setAppId] = useState<string | null>(null);
 

@@ -11,7 +11,7 @@ import {
 import { injectable } from 'tsyringe';
 import {
   Database,
-  Next Nexus PlatformRole,
+  NextNexusRole,
   SSOApiResetResponseType,
   SSOApiSignInWithPassword,
   SSOApiSignUp,
@@ -230,7 +230,7 @@ export class Next Nexus PlatformSupabaseClient {
       first_name: firstname,
       last_name: lastname,
       // Default role = HACKER
-      // role: Object.keys(Next Nexus PlatformRole).indexOf(Next Nexus PlatformRole.HACKER) + 1,
+      // role: Object.keys(NextNexusRole).indexOf(NextNexusRole.HACKER) + 1,
     });
   }
 

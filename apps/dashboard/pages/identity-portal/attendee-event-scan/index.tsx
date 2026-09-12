@@ -15,8 +15,8 @@ import searchUser from '../../../common/search-user';
 import { ScrollableListBox } from '../../../components/identity-portal/scrollable-list-box/scrollable-list-box';
 import { formatTimestamp } from '../../../common/format-timestamp';
 import { PostgrestError } from '@supabase/supabase-js';
-import { Next Nexus PlatformRole } from '@nextnexus/types';
-import useNext Nexus PlatformUser from '../../../hooks/use-nextnexus-user/use-nextnexus-user';
+import { NextNexusRole } from '@nextnexus/types';
+import useNextNexusUser from '../../../hooks/use-nextnexus-user/use-nextnexus-user';
 import { useNext Nexus PlatformSupabase } from '@nextnexus/nextnexus-supabase-context';
 import { SearchUserBox } from 'apps/dashboard/components/identity-portal/search-user-box/search-user-box';
 
@@ -207,14 +207,14 @@ export function Index() {
     }
   }, [eventId]);
 
-  const { user: authUser } = useNext Nexus PlatformUser();
+  const { user: authUser } = useNextNexusUser();
   if (authUser == null) {
     return <>Loading</>;
   }
   // Limit access to only volunteer role
   if (
-    authUser?.role !== Next Nexus PlatformRole.VOLUNTEER &&
-    authUser?.role !== Next Nexus PlatformRole.SPONSOR
+    authUser?.role !== NextNexusRole.VOLUNTEER &&
+    authUser?.role !== NextNexusRole.SPONSOR
   ) {
     router.push('/');
     return <></>;

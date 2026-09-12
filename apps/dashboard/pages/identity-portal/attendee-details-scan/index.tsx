@@ -6,18 +6,18 @@ import styled from 'styled-components';
 import { useRouter } from 'next/router';
 import { BiWifi2 } from 'react-icons/bi';
 import { BackButton } from '../../../components/identity-portal/back-button/back-button';
-import { Next Nexus PlatformRole } from '@nextnexus/types';
-import useNext Nexus PlatformUser from '../../../hooks/use-nextnexus-user/use-nextnexus-user';
+import { NextNexusRole } from '@nextnexus/types';
+import useNextNexusUser from '../../../hooks/use-nextnexus-user/use-nextnexus-user';
 
 export function Index() {
   const router = useRouter();
 
-  const { user: authUser } = useNext Nexus PlatformUser();
+  const { user: authUser } = useNextNexusUser();
   if (authUser == null) {
     return <>Loading</>;
   }
   // Limit access to only volunteer role
-  if (authUser?.role !== Next Nexus PlatformRole.VOLUNTEER) {
+  if (authUser?.role !== NextNexusRole.VOLUNTEER) {
     router.push('/');
     return <></>;
   }

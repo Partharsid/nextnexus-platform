@@ -1,4 +1,4 @@
-import { Next Nexus PlatformRole } from '@nextnexus/types';
+import { NextNexusRole } from '@nextnexus/types';
 
 export namespace TrademarkColors {
   export const LIGHT_PURPLE = 'rgba(215, 112, 199, 61%)';
@@ -47,23 +47,23 @@ export namespace Colors2023 {
     LIGHT: '#E9FFC5',
   };
   export const roleColors = {
-    [Next Nexus PlatformRole.HACKER]: {
+    [NextNexusRole.HACKER]: {
       light: BLUE.LIGHT,
       standard: BLUE.STANDARD,
     },
-    [Next Nexus PlatformRole.ADMIN]: {
+    [NextNexusRole.ADMIN]: {
       light: RED.LIGHT,
       standard: RED.STANDARD,
     },
-    [Next Nexus PlatformRole.SPONSOR]: {
+    [NextNexusRole.SPONSOR]: {
       light: GREEN.LIGHT,
       standard: GREEN.STANDARD,
     },
-    [Next Nexus PlatformRole.VOLUNTEER]: {
+    [NextNexusRole.VOLUNTEER]: {
       light: YELLOW.LIGHT,
       standard: YELLOW.STANDARD,
     },
-    [Next Nexus PlatformRole.JUDGE]: {
+    [NextNexusRole.JUDGE]: {
       light: BLUE.LIGHT,
       standard: BLUE.STANDARD,
     },

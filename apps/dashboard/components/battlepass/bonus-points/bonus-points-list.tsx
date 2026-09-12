@@ -2,7 +2,7 @@ import { H3, Modal, Text, Link } from '@nextnexus/ui';
 import { Button } from '@hacksc/sctw-ui-kit';
 import React, { useState } from 'react';
 import { useBattlepassAPI } from '../../../hooks/use-battlepass-api/use-battlepass-api';
-import useNext Nexus PlatformUser from '../../../hooks/use-nextnexus-user/use-nextnexus-user';
+import useNextNexusUser from '../../../hooks/use-nextnexus-user/use-nextnexus-user';
 import { GrayBox } from '../../gray-box/gray-box';
 import BonusPointsItem from './bonus-points-item';
 import { BonusPointItem } from './types';
@@ -15,7 +15,7 @@ function BattlepassBonusPointsList({ items }: Props) {
   const [chosenBP, setChosenBP] = useState<BonusPointItem | null>(null);
   const [open, setOpen] = useState(false);
   const battlepassApi = useBattlepassAPI();
-  const { user } = useNext Nexus PlatformUser();
+  const { user } = useNextNexusUser();
 
   return (
     <div className="border rounded-lg p-[30px]">

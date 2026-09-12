@@ -5,9 +5,9 @@ import { BsFolder2Open, BsPersonFill } from 'react-icons/bs';
 import { BsCalendarCheck } from 'react-icons/bs';
 import { HiOutlineSquares2X2 } from 'react-icons/hi2';
 import { useMediaQuery } from 'react-responsive';
-import useNext Nexus PlatformUser from '../../hooks/use-nextnexus-user/use-nextnexus-user';
+import useNextNexusUser from '../../hooks/use-nextnexus-user/use-nextnexus-user';
 import { useMemo } from 'react';
-import { Next Nexus PlatformRole } from '@nextnexus/types';
+import { NextNexusRole } from '@nextnexus/types';
 import { useRouter } from 'next/router';
 import { Colors } from '@hacksc/sctw-ui-kit';
 import { BiFolder } from 'react-icons/bi';
@@ -125,17 +125,17 @@ function StyledSideNav() {
 
   const router = useRouter();
 
-  const { user } = useNext Nexus PlatformUser();
+  const { user } = useNextNexusUser();
   const items = useMemo(() => {
     if (user == null) return [];
-    if (user.role === Next Nexus PlatformRole.HACKER) return JUDGE_NAVBAR;
-    if (user.role === Next Nexus PlatformRole.SPONSOR) return SPONSOR_NAVBAR;
+    if (user.role === NextNexusRole.HACKER) return JUDGE_NAVBAR;
+    if (user.role === NextNexusRole.SPONSOR) return SPONSOR_NAVBAR;
     return [];
   }, [user]);
   const hoverColor = useMemo(() => {
     if (user == null) return Colors.Yellow.Yuhlow;
-    if (user.role === Next Nexus PlatformRole.HACKER) return Colors.Yellow.Yuhlow;
-    if (user.role === Next Nexus PlatformRole.SPONSOR) return Colors.Red.Redward;
+    if (user.role === NextNexusRole.HACKER) return Colors.Yellow.Yuhlow;
+    if (user.role === NextNexusRole.SPONSOR) return Colors.Red.Redward;
     return Colors.Yellow.Yuhlow;
   }, [user]);
 

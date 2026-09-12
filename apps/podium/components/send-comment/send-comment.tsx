@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
 import { FiSend } from 'react-icons/fi'; // Import the send icon
-import { useNext Nexus PlatformUser } from '@nextnexus/nextnexus-user-context';
+import { useNextNexusUser } from '@nextnexus/nextnexus-user-context';
 import { getEnv } from '@nextnexus/env';
 import { getCookie } from 'cookies-next';
 
@@ -53,7 +53,7 @@ const SendComment = ({
 }) => {
   const env = getEnv();
 
-  const { user } = useNext Nexus PlatformUser();
+  const { user } = useNextNexusUser();
 
   const [commentText, setCommentText] = useState('');
   const handleSubmit = async () => {

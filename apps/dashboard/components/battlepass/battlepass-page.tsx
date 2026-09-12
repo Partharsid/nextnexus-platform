@@ -5,7 +5,7 @@ import BattlepassPointsBar from './battlepass-points-bar';
 import BattlepassLeaderboard from './leaderboard/battlepass-leaderboard';
 import { BonusPointItem } from './bonus-points/types';
 import BattlepassBonusPointsList from './bonus-points/bonus-points-list';
-import useNext Nexus PlatformUser from '../../hooks/use-nextnexus-user/use-nextnexus-user';
+import useNextNexusUser from '../../hooks/use-nextnexus-user/use-nextnexus-user';
 import {
   BattlepassProgress,
   BATTLEPASS_LEVEL_POINTS,
@@ -18,7 +18,7 @@ function BattlepassPage() {
     data: BonusPointItem[];
     loading: boolean;
   }>({ data: [], loading: true });
-  const { user } = useNext Nexus PlatformUser();
+  const { user } = useNextNexusUser();
   const [bpProg, setBattlepassProgress] = useState<BattlepassProgress | null>(
     null
   );

@@ -2,13 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 import PortalMenu from '../components/portal-menu/portal-menu';
 import TopBar from '../components/top-bar/top-bar';
-import useNext Nexus PlatformUser from '../hooks/use-nextnexus-user/use-nextnexus-user';
+import useNextNexusUser from '../hooks/use-nextnexus-user/use-nextnexus-user';
 import BottomBar from '../components/bottom-bar/bottom-bar';
 
 export type PortalLayoutProps = React.PropsWithChildren;
 
 function PortalLayout({ children }: PortalLayoutProps) {
-  const { user } = useNext Nexus PlatformUser();
+  const { user } = useNextNexusUser();
 
   if (user == null) {
     return <></>;
