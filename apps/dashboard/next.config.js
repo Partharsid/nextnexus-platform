@@ -1,6 +1,6 @@
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const withNx = require('@nrwl/next/plugins/with-nx');
-const { withSentryConfig } = require('@sentry/nextjs');
+const withNx = require('@nrwl/next/plugins/with-nx'// );
+const { withSentryConfig } = require('@sentry/nextjs'// );
 
 /**
  * @type {import('./with-nx.js.js').WithNxOptions}
@@ -42,7 +42,8 @@ const sentryWebpackPluginOptions = {
 
 // Make sure adding Sentry options is the last code to run before exporting, to
 // ensure that your source maps include changes from all other Webpack plugins
-module.exports = withSentryConfig(
-  withNx(nextConfig),
-  sentryWebpackPluginOptions
-);
+// module.exports = withSentryConfig(
+// withNx(nextConfig),
+// sentryWebpackPluginOptions
+// );
+module.exports = withNx(nextConfig);
