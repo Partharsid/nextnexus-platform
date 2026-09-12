@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  sso:
+    build:
+      context: .
+      dockerfile: Dockerfile.coolify
+      args:
+        APP_NAME: sso
+    restart: unless-stopped
+    ports:
+      - "3001:3000"
+    environment:
+      - NODE_ENV=production
+
+  dashboard:
+    build:
+      context: .
+      dockerfile: Dockerfile.coolify
+      args:
+        APP_NAME: dashboard
+    restart: unless-stopped
+    ports:
+      - "3002:3000"
+    environment:
+      - NODE_ENV=production
+
+  www:
+    build:
+      context: .
+      dockerfile: Dockerfile.coolify
+      args:
+        APP_NAME: www-2023
+    restart: unless-stopped
+    ports:
+      - "3003:3000"
+    environment:
+      - NODE_ENV=production

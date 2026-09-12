@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+staged=$(git diff --name-only --staged --diff-filter=d)
+yarn format
+git add ${staged}

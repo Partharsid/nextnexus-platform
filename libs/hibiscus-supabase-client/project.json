@@ -1,0 +1,44 @@
+{
+  "name": "nextnexus-supabase-client",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/nextnexus-supabase-client/src",
+  "projectType": "library",
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/nextnexus-supabase-client/**/*.ts"]
+      }
+    },
+    "build": {
+      "executor": "@nrwl/rollup:rollup",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/nextnexus-supabase-client",
+        "tsConfig": "libs/nextnexus-supabase-client/tsconfig.lib.json",
+        "project": "libs/nextnexus-supabase-client/package.json",
+        "entryFile": "libs/nextnexus-supabase-client/src/index.ts",
+        "external": ["react/jsx-runtime"],
+        "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
+        "compiler": "babel",
+        "assets": [
+          {
+            "glob": "libs/nextnexus-supabase-client/README.md",
+            "input": ".",
+            "output": "."
+          }
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/nextnexus-supabase-client"],
+      "options": {
+        "jestConfig": "libs/nextnexus-supabase-client/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

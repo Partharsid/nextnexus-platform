@@ -1,0 +1,31 @@
+[tool.coverage.run]
+branch = true
+source = ["event_service"]
+
+[tool.coverage.report]
+exclude_lines = ['if TYPE_CHECKING:']
+show_missing = true
+
+[tool.poetry]
+name = "event_service"
+version = "1.0.0"
+description = "A simple event service for Hibiscus"
+authors = []
+license = 'Proprietary'
+readme = 'README.md'
+
+[tool.poetry.dependencies]
+python = ">=3.8,<3.10"
+sqlalchemy = "^2.0.15"
+psycopg2-binary = "^2.9.6"
+chalice = "^1.29.0"
+sqlalchemy-cockroachdb = "^2.0.1"
+requests = "^2.31.0"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.0"
+
+[build-system]
+requires = ["poetry-core==1.1.0"]
+build-backend = "poetry.core.masonry.api"

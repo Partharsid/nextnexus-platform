@@ -1,0 +1,130 @@
+{
+  "name": "event-service",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/event-service/event_service",
+  "targets": {
+    "lock": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "poetry lock --no-update",
+        "cwd": "apps/event-service"
+      }
+    },
+    "add": {
+      "executor": "@nxlv/python:add",
+      "options": {}
+    },
+    "update": {
+      "executor": "@nxlv/python:update",
+      "options": {}
+    },
+    "remove": {
+      "executor": "@nxlv/python:remove",
+      "options": {}
+    },
+    "build": {
+      "executor": "nx:run-commands",
+      "dependsOn": ["install"],
+      "options": {
+        "cwd": "apps/event-service",
+        "command": "poetry build -n -C dist/"
+      }
+    },
+    "install": {
+      "executor": "@nxlv/python:install",
+      "options": {
+        "silent": false,
+        "args": "",
+        "cacheDir": ".cache/pypoetry",
+        "verbose": false,
+        "debug": false
+      }
+    },
+    "lint": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "apps/event-service",
+        "command": "poetry run flake8"
+      }
+    },
+    "test": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "poetry run coverage run -m pytest tests/",
+        "cwd": "apps/event-service"
+      }
+    },
+    "deployment-setup": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "apps/event-service",
+        "command": "SLS_INTERACTIVE_SETUP_ENABLE=1 sls --org nextnexus"
+      }
+    },
+    "deploy": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "poetry export -f requirements.txt --output requirements.txt",
+          "poetry run chalice deploy"
+        ],
+        "color": true,
+        "cwd": "apps/event-service",
+        "parallel": false
+      }
+    },
+    "package": {
+      "executor": "@nxlv/python:sls-package",
+      "dependsOn": ["build"],
+      "options": {}
+    },
+    "format": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "poetry run black .",
+        "cwd": "apps/event-service"
+      }
+    },
+    "serve": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "poetry run chalice local",
+        "cwd": "apps/event-service"
+      }
+    },
+    "coverage": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "poetry run coverage report",
+        "cwd": "apps/event-service"
+      }
+    },
+    "db-setup": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "docker build -t postgres-events .",
+        "cwd": "apps/event-service"
+      }
+    },
+    "db-start": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "docker run --name postgres-events -p 5432:5432 -d postgres-events",
+        "cwd": "apps/event-service"
+      }
+    },
+    "db-stop": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "docker stop postgres-events",
+          "docker rm postgres-events"
+        ],
+        "parallel": false,
+        "cwd": "apps/event-service"
+      }
+    }
+  },
+  "tags": []
+}

@@ -1,0 +1,41 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2017", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@nextnexus/analytics": ["libs/analytics/src/index.ts"],
+      "@nextnexus/api-interfaces": ["libs/api-interfaces/src/index.ts"],
+      "@nextnexus/env": ["libs/env/src/index.ts"],
+      "@nextnexus/hackform-client": ["libs/hackform-client/src/index.ts"],
+      "@nextnexus/nextnexus-supabase-client": [
+        "libs/nextnexus-supabase-client/src/index.ts"
+      ],
+      "@nextnexus/nextnexus-supabase-context": [
+        "libs/nextnexus-supabase-context/src/index.ts"
+      ],
+      "@nextnexus/nextnexus-user-context": [
+        "libs/nextnexus-user-context/src/index.ts"
+      ],
+      "@nextnexus/icons": ["libs/icons/src/index.ts"],
+      "@nextnexus/metadata": ["libs/metadata/src/index.ts"],
+      "@nextnexus/sso-client": ["libs/sso-client/src/index.ts"],
+      "@nextnexus/styles": ["libs/styles/src/index.ts"],
+      "@nextnexus/types": ["libs/types/src/index.ts"],
+      "@nextnexus/ui": ["libs/ui/src/index.ts"],
+      "@nextnexus/ui-kit-2023": ["libs/ui-kit-2023/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}

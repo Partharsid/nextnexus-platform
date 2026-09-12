@@ -1,0 +1,60 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "cli": "nx",
+  "$id": "hacksc-nextjs-application",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Next.js application name",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      },
+      "x-prompt": "Enter your application name:"
+    },
+    "style": {
+      "type": "string",
+      "description": "Stylesheet formatter to use",
+      "default": "styled-components",
+      "x-prompt": {
+        "message": "What styling formatter do you want to use?",
+        "type": "list",
+        "items": [
+          {
+            "value": "scss",
+            "label": "SCSS"
+          },
+          {
+            "value": "css",
+            "label": "CSS"
+          },
+          {
+            "value": "styled-components",
+            "label": "Styled-Components (recommended)"
+          }
+        ]
+      }
+    },
+    "e2e": {
+      "type": "string",
+      "description": "E2E or not to E2E",
+      "default": "none",
+      "x-prompt": {
+        "message": "E2E test runner (this will create a APP_NAME-e2e folder for this app)",
+        "type": "list",
+        "items": [
+          {
+            "value": "cypress",
+            "label": "Cypress"
+          },
+          {
+            "value": "none",
+            "label": "None"
+          }
+        ]
+      }
+    }
+  },
+  "required": ["name"]
+}

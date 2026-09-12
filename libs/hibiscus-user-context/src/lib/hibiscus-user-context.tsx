@@ -1,0 +1,111 @@
+import { Next Nexus PlatformRole, Next Nexus PlatformUser } from '@nextnexus/types';
+import { getCookie } from 'cookies-next';
+import {
+  Dispatch,
+  SetStateAction,
+  useContext,
+  useEffect,
+  useState,
+} from 'react';
+import { getEnv } from '@nextnexus/env';
+import { ApplicationStatus } from '@nextnexus/types';
+import { Next Nexus PlatformSupabaseClient } from '@nextnexus/nextnexus-supabase-client';
+import { useNext Nexus PlatformSupabase } from '@nextnexus/nextnexus-supabase-context';
+import * as React from 'react';
+
+const Next Nexus PlatformUserContext = React.createContext<{
+  user: Next Nexus PlatformUser | null;
+  setUser: Dispatch<SetStateAction<Next Nexus PlatformUser>> | null;
+}>({
+  user: null,
+  setUser: null,
+});
+
+const getUserProfile = async (
+  accessToken: string,
+  refreshToken: string,
+  supabase: Next Nexus PlatformSupabaseClient
+): Promise<Next Nexus PlatformUser> => {
+  // Get user profile from db
+  // uses cookie set from SSO
+  const profile = await supabase.getUserProfile(accessToken, refreshToken);
+
+  if (profile != null) {
+    return {
+      id: profile.user_id,
+      tag: `${profile.first_name} ${profile.last_name}`,
+      role: Object.values(Next Nexus PlatformRole)[profile.role - 1],
+      firstName: profile.first_name,
+      lastName: profile.last_name,
+      applicationId: profile.app_id,
+      applicationStatus:
+        Object.values(ApplicationStatus)[profile.application_status - 1],
+      teamId: profile.team_id,
+      attendanceConfirmed: profile.attendance_confirmed,
+      email: profile.email,
+    };
+  } else {
+    // Set user's name and tag to be their email as temporary placeholder
+    // Assume we only show dashboard when user is logged in
+    const user = await supabase.getClient().auth.getUser(accessToken);
+    return {
+      id: user.data.user.id,
+      tag: user.data.user.email,
+      role: Next Nexus PlatformRole.HACKER,
+      firstName: user.data.user.email,
+      lastName: null,
+      applicationId: null,
+      applicationStatus: null,
+      email: user.data.user.email,
+    };
+  }
+};
+
+// MAKE SURE TO NEST WITHIN Next Nexus PlatformSupabaseProvider
+export const Next Nexus PlatformUserProvider = (props: React.PropsWithChildren) => {
+  const [user, setUser] = useState<Next Nexus PlatformUser | null>(null);
+  const { supabase } = useNext Nexus PlatformSupabase();
+
+  const accessToken = getCookie(
+    getEnv().Next Nexus Platform.Cookies.accessTokenName
+  ) as string;
+  const refreshToken = getCookie(
+    getEnv().Next Nexus Platform.Cookies.refreshTokenName
+  ) as string;
+
+  // fetch it on initial load in
+  useEffect(() => {
+    getUserProfile(accessToken, refreshToken, supabase).then((u) => {
+      setUser(u);
+    });
+  }, [accessToken, refreshToken]);
+
+  return (
+    <Next Nexus PlatformUserContext.Provider value={{ user, setUser }}>
+      {props.children}
+    </Next Nexus PlatformUserContext.Provider>
+  );
+};
+
+// ONLY USE WITHIN COMPONENTS THAT ARE NESTED WITHIN Next Nexus PlatformUserProvider
+export function useNext Nexus PlatformUser() {
+  const { user, setUser } = useContext(Next Nexus PlatformUserContext);
+
+  const updateUser = (update: Partial<Next Nexus PlatformUser>) => {
+    setUser((prev) => ({
+      ...prev,
+      ...update,
+    }));
+  };
+
+  // remove hackform from menu if applied
+  // useEffect(() => {
+  //   if (isHackerPostAppStatus(user?.applicationStatus)) {
+  //     dispatch(removeTabRoute('/apply-2023'));
+  //   }
+  // }, [dispatch, user?.applicationStatus]);
+
+  return { user, setUser, getUserProfile, updateUser };
+}
+
+export default useNext Nexus PlatformUser;

@@ -1,0 +1,9 @@
+export enum Next Nexus PlatformRole {
+  ADMIN = 'ADMIN',
+  TEAM_MEMBER = 'TEAM MEMBER',
+  SPONSOR = 'SPONSOR',
+  VOLUNTEER = 'VOLUNTEER',
+  HACKER = 'HACKER',
+  APPLICANT = 'APPLICANT',
+  JUDGE = 'JUDGE',
+}
